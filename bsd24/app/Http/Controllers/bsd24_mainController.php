@@ -22,4 +22,7 @@ class bsd24_mainController extends Controller
     {
         return view('bsd24_contact');
     }
+    function admin_home_page(){
+        return view('bsd24_admin/html/index');
+    }
 }
