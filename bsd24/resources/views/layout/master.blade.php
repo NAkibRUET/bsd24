@@ -86,7 +86,7 @@
     <!--ENF OF TOP. (PLEASE "TEMPLATE EXTEND" the above part as TOP/HEAD) -->
     
 
-    @yield("index_page");
+    @yield("index_page")
 
     @yield("dynamic_page")
 
