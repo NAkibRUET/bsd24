@@ -59,7 +59,7 @@
 
 		 <div class="container top_three">
 			<div class="topnav" id="myTopnav">
-			  <a><img class="logo" src="{{ URL::asset ('bsd24_assets/logo.png') }}" ></a>
+			  <a><img class="logo" src="{{ URL::asset ('bsd24_assets/LogoBSD.png') }}" ></a>
               <a href="{{URL::to('/')}}" class="nav_content">Home</a>
 			  <a href="" class="nav_content">Review</a>
 			  <a href="" class="nav_content">Vip Program</a>
@@ -104,7 +104,7 @@
 		<div class="footerOne">
 			<div class="row footerOneOne">
 				<div class="col-md-4">
-					<img src="{{ URL::asset ('bsd24_assets/logo.png') }}" width="300" alt="BuySellDollar24">
+					<img src="{{ URL::asset ('bsd24_assets/LogoBSD.png') }}" width="300" alt="BuySellDollar24">
 					<h5 style=" color: #1B6DC1;">Dollar Buy, Sell, Exchange in Bangladesh</h5>
 
 				</div>

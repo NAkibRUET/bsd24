@@ -28,9 +28,29 @@ label{
   margin-bottom: 10px;
 }
 
-
+.box2nd100{
+  background: white; width: 100%; margin:10px auto; padding: 0px; -moz-box-shadow: 0 0 5px #999;
+  -webkit-box-shadow: 0 0 5px #999;
+  box-shadow: 0 0 5px #999;font-family: Helvetica; 
+  border-radius: 5px;
+  transition: 0.5s;
+}
+.box2nd95{
+  background: white; width: 95%; margin:10px auto; padding: 0px; -moz-box-shadow: 0 0 5px #999;
+  -webkit-box-shadow: 0 0 5px #999;
+  box-shadow: 0 0 5px #999;font-family: Helvetica; 
+  border-radius: 5px;
+  transition: 0.5s;
+}
+.box100{
+  background: white; width: 95%; margin:10px auto; padding: 30px 35px; -moz-box-shadow: 0 0 5px #999;
+  -webkit-box-shadow: 0 0 5px #999;
+  box-shadow: 0 0 5px #999;font-family: Helvetica; 
+  border-radius: 5px;
+  transition: 0.5s;
+}
 .box80{
-  background: white; width: 80%; margin:0 auto; padding: 30px 35px; -moz-box-shadow: 0 0 5px #999;
+  background: white; width: 80%; margin:10px auto; padding: 30px 35px; -moz-box-shadow: 0 0 5px #999;
   -webkit-box-shadow: 0 0 5px #999;
   box-shadow: 0 0 5px #999;font-family: Helvetica; 
   border-radius: 5px;
@@ -38,7 +58,7 @@ label{
 
 }
 .box70{
-  background: white; width: 70%; margin:0 auto; padding: 30px 35px; -moz-box-shadow: 0 0 5px #999;
+  background: white; width: 70%; margin:5px auto; padding: 30px 35px; -moz-box-shadow: 0 0 5px #999;
   -webkit-box-shadow: 0 0 5px #999;
   box-shadow: 0 0 5px #999;font-family: Helvetica; 
   border-radius: 5px;
@@ -46,7 +66,7 @@ label{
 
 }
 .box60{
-  background: white; width: 60%; margin:0 auto; padding: 30px 35px; -moz-box-shadow: 0 0 5px #999;
+  background: white; width: 60%; margin:5px auto; padding: 30px 35px; -moz-box-shadow: 0 0 5px #999;
   -webkit-box-shadow: 0 0 5px #999;
   box-shadow: 0 0 5px #999;font-family: Helvetica; 
   border-radius: 5px;
@@ -54,7 +74,7 @@ label{
 
 }
 .box30{
-  background: white; width: 30%; margin:0 auto; padding: 30px 35px; -moz-box-shadow: 0 0 5px #999;
+  background: white; width: 30%; margin:5px auto; padding: 30px 35px; -moz-box-shadow: 0 0 5px #999;
   -webkit-box-shadow: 0 0 5px #999;
   box-shadow: 0 0 5px #999; font-family: Helvetica; 
   border-radius: 5px;
@@ -62,7 +82,7 @@ label{
 
 }
 .box40{
-  background: white; width: 40%; margin:0 auto; padding: 30px 35px; -moz-box-shadow: 0 0 5px #999;
+  background: white; width: 40%; margin:5px auto; padding: 30px 35px; -moz-box-shadow: 0 0 5px #999;
   -webkit-box-shadow: 0 0 5px #999;
   box-shadow: 0 0 5px #999; font-family: Helvetica; 
   border-radius: 5px;
@@ -70,7 +90,7 @@ label{
 
 }
 .box50{
-  background: white; width: 50%; margin:0 auto; padding: 30px 35px; -moz-box-shadow: 0 0 5px #999;
+  background: white; width: 50%; margin:5px auto; padding: 30px 35px; -moz-box-shadow: 0 0 5px #999;
   -webkit-box-shadow: 0 0 5px #999;
   box-shadow: 0 0 5px #999; font-family: Helvetica; 
   border-radius: 5px;
@@ -78,18 +98,35 @@ label{
 
 }
 
-.box30:hover, .box40:hover, .box50:hover, .box60:hover, .box70:hover, .box80:hover{
+.box30:hover, .box40:hover, .box50:hover, .box60:hover, .box70:hover, .box80:hover,.box100:hover,.box2nd100:hover{
   -moz-box-shadow: 0 0 15px #999;
   -webkit-box-shadow: 0 0 15px #999;
   box-shadow: 0 0 15px #999;
+}
+.box2ndHeader{
+  background-color: #1B6DC1 ;
+  color:#fff;
+  padding: 8px 18px;
+  border-radius: 5px 5px 0px 0px;
 }
 .boxHeader{
   color: #1B6DC1;
   font-weight: bold;
   padding-bottom: 10px;
 }
+.reserveDiv{
+  padding:5px 15px; padding-bottom:60px;
+  cursor: pointer;
+}
+.reserveDiv .text{
+  font-size: 12px;
+  margin: 0;
+}
+.reserveDiv .mainText{
+  font-size:15px; font-weight:bold;
+}
 .logo{
-  margin-right: 385px;
+  margin-right: 450px;
   margin-top: -5px;
   height:35px;
 }
@@ -283,7 +320,7 @@ label{
   font-size: 14px;
 }
 .section{
-  padding-top: 150px;
+  padding-top: 140px;
   padding-bottom: 250px;
   min-height: 700px;
 }
@@ -306,7 +343,7 @@ label{
 }
 @media screen and (max-width: 1280px) {
   .logo{
-    margin-right: 350px;
+    margin-right: 430px;
     margin-top: -5px;
     height:35px;
   }
@@ -318,7 +355,7 @@ label{
 }
 @media screen and (max-width: 1200px) {
   .logo{
-    margin-right: 260px;
+    margin-right: 360px;
     margin-top: -5px;
     height:35px;
   }
@@ -348,7 +385,7 @@ label{
 
 @media screen and (max-width: 1180px) {
   .logo{
-    margin-right: 180px;
+    margin-right: 240px;
     margin-top: -5px;
     height:35px;
   }
@@ -362,7 +399,7 @@ label{
 }
 @media screen and (max-width: 1080px) {
   .logo{
-    margin-right: 140px;
+    margin-right: 230px;
     margin-top: -5px;
     height:35px;
   }
