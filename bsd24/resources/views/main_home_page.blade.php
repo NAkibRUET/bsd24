@@ -13,10 +13,10 @@
 	<!--Please, place all your div/box/anything inside the above SECTION-->
 	<div class="section container" style="">
   		<div class="row">
-  			<div class="col-md-9">
+  			<div class="col-lg-9">
   				<div class="box100">
   					<div class="row">
-  						<div class="col-md-6">
+  						<div class="col-sm-6">
   							<div class="row">
 	  							<div class="col-md-3 imgDivExchange">
 	  								<br>
@@ -48,7 +48,7 @@
 	  							</div>
   							</div>
   						</div>
-  						<div class="col-md-6">
+  						<div class="col-sm-6">
   							<div class="row">
 	  							<div class="col-md-9">
 	  								<h4 class="boxHeader"><i class="fa fa-arrow-down"></i> Receive</h4>
@@ -85,121 +85,120 @@
   					<button class="btn btn-primary w-100" type="button">Exchange</button>
 				</div>
 			</div>
-			<div class="col-md-3">
+			<div class="col-lg-3">
   				<div class="box2nd100">
 					<h5 class="box2ndHeader">Our Reserve</h5>	
 					<div class="reserveDiv">
 						<img src="{{ URL::asset ('bsd24_assets/neteller.png') }}" width="50px"
 								class="rounded-circle img-thumbnail pull-left">
-						<div class="pull-left" style="margin-left:15px;">
+						<span class="pull-left reserveSpan">
 							<span class="mainText">Neteller USD</span><br/>
 							<span class="text text-muted">2357.42 USD </span>
-						</div>
+						</span>
 					</div> 
 					<div class="reserveDiv">
 						<img src="{{ URL::asset ('bsd24_assets/paypal.jpg') }}" width="50px"
 								class="rounded-circle img-thumbnail pull-left">
-						<div class="pull-left" style="margin-left:15px;">
+						<span class="pull-left reserveSpan">
 							<span class="mainText">Paypal USD</span><br/>
 							<span class="text text-muted">2357.42 USD </span>
-						</div>
+						</span>
 					</div> 
 					<div class="reserveDiv">
 						<img src="{{ URL::asset ('bsd24_assets/payoneer.png') }}" width="50px"
 								class="rounded-circle img-thumbnail pull-left">
-						<div class="pull-left" style="margin-left:15px;">
+						<span class="pull-left reserveSpan">
 							<span class="mainText">Payoneer USD</span><br/>
 							<span class="text text-muted">2357.42 USD </span>
-						</div>
+						</span>
 					</div> 
 					<div class="reserveDiv">
 						<img src="{{ URL::asset ('bsd24_assets/pm.png') }}" width="50px"
 								class="rounded-circle img-thumbnail pull-left">
-						<div class="pull-left" style="margin-left:15px;">
+						<span class="pull-left reserveSpan">
 							<span class="mainText">PM USD</span><br/>
 							<span class="text text-muted">2357.42 USD </span>
-						</div>
+						</span>
 					</div> 
 					<div class="reserveDiv">
 						<img src="{{ URL::asset ('bsd24_assets/skrill.png') }}" width="50px"
-								class="rounded-circle img-thumb
-								nelse if()ail pull-left">
-						<div class="pull-left" style="margin-left:15px;">
+								class="rounded-circle img-thumbnail pull-left">
+						<span class="pull-left reserveSpan">
 							<span class="mainText">Skrill USD</span><br/>
 							<span class="text text-muted">2357.42 USD </span>
-						</div>
+						</span>
 					</div> 
 					<div class="reserveDiv">
 						<img src="{{ URL::asset ('bsd24_assets/bkash.png') }}" width="50px"
 								class="rounded-circle img-thumbnail pull-left">
-						<div class="pull-left" style="margin-left:15px;">
+						<span class="pull-left reserveSpan">
 							<span class="mainText">BKash Personal BDT</span><br/>
 							<span class="text text-muted">2357.42 BDT </span>
-						</div>
+						</span>
 					</div> 
 					<div class="reserveDiv">
 						<img src="{{ URL::asset ('bsd24_assets/bkash_agent.png') }}" width="50px"
 								class="rounded-circle img-thumbnail pull-left">
-						<div class="pull-left" style="margin-left:15px;">
+						<span class="pull-left reserveSpan">
 							<span class="mainText">BKash Agent BDT</span><br/>
 							<span class="text text-muted">2357.42 BDT </span>
-						</div>
+						</span>
 					</div> 
 					<div class="reserveDiv">
 						<img src="{{ URL::asset ('bsd24_assets/rocket.png') }}" width="50px"
 								class="rounded-circle img-thumbnail pull-left">
-						<div class="pull-left" style="margin-left:15px;">
+						<span class="pull-left reserveSpan">
 							<span class="mainText">Rocket Personal BDT</span><br/>
 							<span class="text text-muted">2357.42 BDT </span>
-						</div>
+						</span>
 					</div> 
 					<div class="reserveDiv">
 						<img src="{{ URL::asset ('bsd24_assets/rocket_agent.jpg') }}" width="50px"
 								class="rounded-circle img-thumbnail pull-left">
-						<div class="pull-left" style="margin-left:15px;">
+						<span class="pull-left reserveSpan">
 							<span class="mainText">Rocket Agent BDT</span><br/>
 							<span class="text text-muted">2357.42 BDT </span>
-						</div>
+						</span>
 					</div> 
 					<div class="reserveDiv">
 						<img src="{{ URL::asset ('bsd24_assets/nagad.jpg') }}" width="50px"
 								class="rounded-circle img-thumbnail pull-left">
-						<div class="pull-left" style="margin-left:15px;">
+						<span class="pull-left reserveSpan">
 							<span class="mainText">Nagad BDT</span><br/>
 							<span class="text text-muted">2357.42 BDT </span>
-						</div>
+						</span>
 					</div> 
 					<div class="reserveDiv">
 						<img src="{{ URL::asset ('bsd24_assets/dbbl.png') }}" width="50px"
 								class="rounded-circle img-thumbnail pull-left">
-						<div class="pull-left" style="margin-left:15px;">
+						<span class="pull-left reserveSpan">
 							<span class="mainText">DBBL BDT</span><br/>
 							<span class="text text-muted">2357.42 BDT </span>
-						</div>
+						</span>
 					</div> 
 					<div class="reserveDiv">
 						<img src="{{ URL::asset ('bsd24_assets/city-bank.png') }}" width="50px"
 								class="rounded-circle img-thumbnail pull-left">
-						<div class="pull-left" style="margin-left:15px;">
+						<span class="pull-left reserveSpan">
 							<span class="mainText">City Bank BDT</span><br/>
 							<span class="text text-muted">2357.42 BDT </span>
-						</div>
+						</span>
 					</div> 
 					<div class="reserveDiv">
 						<img src="{{ URL::asset ('bsd24_assets/webmoney.png') }}" width="50px"
 								class="rounded-circle img-thumbnail pull-left">
-						<div class="pull-left" style="margin-left:15px;">
+						<span class="pull-left reserveSpan">
 							<span class="mainText">Webmoney USD</span><br/>
 							<span class="text text-muted">2357.42 USD </span>
-						</div>
+						</span>
 					</div> 
 					<div class="reserveDiv">
 						<img src="{{ URL::asset ('bsd24_assets/coinbase.png') }}" width="50px"
 								class="rounded-circle img-thumbnail pull-left">
-						<div class="pull-left" style="margin-left:15px;">
+						<span class="pull-left reserveSpan">
 							<span class="mainText">Coinbase USD</span><br/>
 							<span class="text text-muted">2357.42 USD </span>
-						</div>
+						</span>
 					</div> 
 				</div>
 			</div>

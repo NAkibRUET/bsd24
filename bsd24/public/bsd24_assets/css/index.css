@@ -125,6 +125,9 @@ label{
 .reserveDiv .mainText{
   font-size:15px; font-weight:bold;
 }
+.reserveSpan{
+  margin-left: 15px;
+}
 .imgExchange{
   margin-top: 15px;
 }
@@ -353,15 +356,28 @@ label{
     margin-top: -5px;
     height:35px;
   }
-  
-
   .nothing{
     margin-left: 40%;
   }
 }
 @media screen and (max-width: 1200px) {
+  .reserveDiv{
+    padding:5px 3px; padding-bottom:60px;
+    cursor: pointer;
+  }
+  .reserveDiv .text{
+    font-size: 8px;
+    margin: 0;
+  }
+  .reserveDiv .mainText{
+    font-size:12px; font-weight:bold;
+  }
+  .reserveSpan{
+    margin-left: 5px;
+  }
+
   .logo{
-    margin-right: 360px;
+    margin-right: 260px;
     margin-top: -5px;
     height:35px;
   }
@@ -404,6 +420,7 @@ label{
   }
 }
 @media screen and (max-width: 1080px) {
+  
   .logo{
     margin-right: 230px;
     margin-top: -5px;
@@ -418,7 +435,24 @@ label{
   }
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 992px) {
+  .reserveDiv{
+    padding:5px 15px; padding-bottom:60px;
+    cursor: pointer;
+  }
+  .reserveDiv .text{
+    font-size: 12px;
+    margin: 0;
+  }
+  .reserveDiv .mainText{
+    font-size:14px; font-weight:bold;
+  }
+  .reserveSpan{
+    margin-left: 15px;
+  }
+  .imgReserve{
+    display: none;
+  }
   .imgDivExchange{
     display: none;
   }
@@ -471,6 +505,24 @@ label{
   .topnav{
     margin-left:4%; 
   }
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdownx {float: none;}
+  .topnav.responsive .dropdownx-content {position: relative;}
+  .topnav.responsive .dropdownx .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
   .section1{
     width: 95%;
   }
@@ -501,6 +553,9 @@ label{
 }
 
 @media screen and (max-width: 800px) {
+  .imgReserve{
+    display: none;
+  }
   .logo{
     margin-right: 180px;
     margin-top: -5px;
