@@ -27,7 +27,121 @@ label{
   border: 0.5px solid #99ff99;
   margin-bottom: 10px;
 }
+/* ReviewBox Start*/
+.reviewBox p{
+    padding-top:20px;
+    font-style:italic;
+  }
+  .reviewBox{
+    width:100%;
+    padding-left: 80px;
+    padding-right: 25px;
+    border: 1px solid #e5e5e5;
+    padding-bottom:30px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    position:relative;
+    background:#fff;
+    border-left: 3px solid #1B6DC1;
+  }
+  .reviewBox:after{
+    content: '';
+      width: 1px;
+      height: 149px;
+      position: absolute;
+      left: -2px;
+      top: -1px;
+  }
+  .quoteSignOne{
+    position:relative;
+  }
+  .quoteSignOne:after{
+    content: '';
+      border: 1px solid #1B6DC1;
+      background: #1B6DC1;
+      width: 12px;
+      height: 25px;
+      position: absolute;
+      left: -50px;
+      top: 35px;
+  }
+  .quoteSignOne:before{
+    content: '';
+      border-left: 13px solid transparent;
+      border-top: 13px solid #ffffff;
+      position: absolute;
+      left: -48px;
+      top: 35px;
+      z-index: 1;
+  }
+  .quoteSignTwo{
+    position:relative;
+  }
+  .quoteSignTwo:after{
+    content: '';
+    border: 1px solid #1B6DC1;
+      background: #1B6DC1;
+      width: 12px;
+      height: 25px;
+      position: absolute;
+      left: -30px;
+      top: 35px;
+  }
+  .quoteSignTwo:before{
+    content: '';
+      border-left: 12px solid transparent;
+      border-top: 12px solid #ffffff;
+      position: absolute;
+      left: -28px;
+      top: 35px;
+      z-index: 1;
+  }
+  .reviewBox h1{
+    font-size:14px;
+    font-weight:500;
+    color:#797979;
+    font-family: 'Lato', sans-serif;
+    margin-top:10px;
+    
+  }
+  .reviewBox h1 span{
+    margin:0 2px 0 2px;
+    color: #1B6DC1;
+  }
+/* ReviewBox Ends*/
+.slider {
+        width: 95%;
+        margin: 10px auto;
+    }
 
+    .slick-slide {
+      margin: 0px 20px;
+    }
+
+    .slick-slide img {
+      width: 100%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: black;
+    }
+
+
+    .slick-slide {
+      transition: all ease-in-out .3s;
+      opacity: .2;
+    }
+    
+    .slick-active {
+      opacity: .5;
+    }
+
+    .slick-current {
+      opacity: 1;
+    }
+/*Slick Slider*/
+/*Slick end*/
 .box2nd100{
   background: white; width: 100%; margin:10px auto; padding: 0px; -moz-box-shadow: 0 0 5px #999;
   -webkit-box-shadow: 0 0 5px #999;
@@ -36,7 +150,7 @@ label{
   transition: 0.5s;
 }
 .box2nd95{
-  background: white; width: 95%; margin:10px auto; padding: 0px; -moz-box-shadow: 0 0 5px #999;
+  background: white; width: 95%; margin:15px auto; padding: 0px; -moz-box-shadow: 0 0 5px #999;
   -webkit-box-shadow: 0 0 5px #999;
   box-shadow: 0 0 5px #999;font-family: Helvetica; 
   border-radius: 5px;
@@ -98,7 +212,7 @@ label{
 
 }
 
-.box30:hover, .box40:hover, .box50:hover, .box60:hover, .box70:hover, .box80:hover,.box100:hover,.box2nd100:hover{
+.box30:hover, .box40:hover, .box50:hover, .box60:hover, .box70:hover, .box80:hover,.box100:hover,.box2nd100:hover, .box2nd95:hover{
   -moz-box-shadow: 0 0 15px #999;
   -webkit-box-shadow: 0 0 15px #999;
   box-shadow: 0 0 15px #999;
@@ -618,6 +732,12 @@ label{
   }
   .box50{
     width: 85%; padding: 30px 35px;
+  }
+  .box2nd95{
+    width: 99%;
+  }
+  .box100{
+    width: 99%; 
   }
   .topnav .icon {
     font-size:18px;
