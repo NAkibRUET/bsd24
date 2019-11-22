@@ -88,35 +88,111 @@
 				<div class="box2nd95">
 					<h5 class="box2ndHeader">Reviews</h5>
 					<section class="lazy slider">
-				    <div class="reviewBox">
-				      <div class="quoteSignOne"></div>
-				      <div class="quoteSignTwo"></div>
-				      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
-				      <div class=""></div>
-				      <h1>by <span>sunita due</span></h1>
-				    </div>
-				    <div class="reviewBox">
-				      <div class="quoteSignOne"></div>
-				      <div class="quoteSignTwo"></div>
-				      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
-				      <div class=""></div>
-				      <h1>by <span>sunita due</span></h1>
-				    </div>
-				    <div class="reviewBox">
-				      <div class="quoteSignOne"></div>
-				      <div class="quoteSignTwo"></div>
-				      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
-				      <div class=""></div>
-				      <h1>by <span>Tahsin</span></h1>
-				    </div>
-				    <div class="reviewBox">
-				      <div class="quoteSignOne"></div>
-				      <div class="quoteSignTwo"></div>
-				      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
-				      <div class=""></div>
-				      <h1>by <span>Nakib</span></h1>
-				    </div>
-				  </section>
+					    <div class="reviewBox">
+					      <div class="quoteSignOne"></div>
+					      <div class="quoteSignTwo"></div>
+					      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
+					      <div class=""></div>
+					      <h1>by <span>sunita due</span></h1>
+					    </div>
+					    <div class="reviewBox">
+					      <div class="quoteSignOne"></div>
+					      <div class="quoteSignTwo"></div>
+					      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
+					      <div class=""></div>
+					      <h1>by <span>sunita due</span></h1>
+					    </div>
+					    <div class="reviewBox">
+					      <div class="quoteSignOne"></div>
+					      <div class="quoteSignTwo"></div>
+					      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
+					      <div class=""></div>
+					      <h1>by <span>Tahsin</span></h1>
+					    </div>
+					    <div class="reviewBox">
+					      <div class="quoteSignOne"></div>
+					      <div class="quoteSignTwo"></div>
+					      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
+					      <div class=""></div>
+					      <h1>by <span>Nakib</span></h1>
+					    </div>
+				 	</section>
+				</div>
+				<div class="box2nd95">
+					<h5 class="box2ndHeader">Latest Buy Sell (Processing)</h5>
+					<div class="tableDiv">
+						<table class="table table-striped table-hover">
+						  <thead>
+						    <tr>
+						      <th scope="col" class="hiddenElem2">#</th>
+						      <th scope="col">Send</th>
+						      <th scope="col">Receive</th>
+						      <th scope="col">Amount</th>
+						      <th scope="col">User</th>
+						      <th scope="col">Date</th>
+						      <th scope="col"><span class="hiddenElem">Status</span></th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr>
+						      <th scope="row" class="hiddenElem2">1</th>
+						      <td><img src="{{ URL::asset ('bsd24_assets/bkash_agent.png') }}" width="25" class="rounded-circle"> <span class="hiddenElem">BKash Agent</span></td>
+						      <td><img src="{{ URL::asset ('bsd24_assets/nagad.jpg') }}" width="25" class="rounded-circle"> <span class="hiddenElem">Nagad</span></td>
+						      <td>5000 BDT</td>
+						      <td>Mark Otto</td>
+						      <td><span class="badge badge-primary">09/11/2019</span></td>
+						      <td><span class="badge badge-warning hiddenElem"> Processing</span></td>
+						    </tr>
+						    <tr>
+						      <th scope="row" class="hiddenElem2">2</th>
+						      <td><img src="{{ URL::asset ('bsd24_assets/skrill.png') }}" width="25" class="rounded-circle"> <span class="hiddenElem">Skrill</span></td>
+						      <td><img src="{{ URL::asset ('bsd24_assets/neteller.png') }}" width="25" class="rounded-circle"> <span class="hiddenElem">Neteller</span></td>
+						      <td>5000 BDT</td>
+						      <td>John Doe</td>
+						      <td><span class="badge badge-primary">09/11/2019</span></td>
+						      <td><span class="badge badge-warning hiddenElem"> Processing</span></td>
+						    </tr>
+						  </tbody>
+						</table>
+					</div>
+				</div>
+				<div class="box2nd95">
+					<h5 class="box2ndHeader">Latest Buy Sell (Processing)</h5>
+					<div class="tableDiv">
+						<table class="table table-striped table-hover">
+						  <thead>
+						    <tr>
+						      <th scope="col" class="hiddenElem2">#</th>
+						      <th scope="col">Send</th>
+						      <th scope="col">Receive</th>
+						      <th scope="col">Amount</th>
+						      <th scope="col">User</th>
+						      <th scope="col">Date</th>
+						      <th scope="col"><span class="hiddenElem">Status</span></th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr>
+						      <th scope="row" class="hiddenElem2">1</th>
+						      <td><img src="{{ URL::asset ('bsd24_assets/bkash_agent.png') }}" width="25" class="rounded-circle"> <span class="hiddenElem">BKash Agent</span></td>
+						      <td><img src="{{ URL::asset ('bsd24_assets/city-bank.png') }}" width="25" class="rounded-circle"> <span class="hiddenElem">City Bank</span></td>
+						      <td>5000 BDT</td>
+						      <td>Mark Otto</td>
+						      <td><span class="badge badge-primary">09/11/2019</span></td>
+						      <td><span class="badge badge-success hiddenElem"><i class="fa fa-check"></i> Completed</span></td>
+						    </tr>
+						    <tr>
+						      <th scope="row" class="hiddenElem2">2</th>
+						      <td><img src="{{ URL::asset ('bsd24_assets/webmoney.png') }}" width="25" class="rounded-circle"> <span class="hiddenElem">WebMoney</span></td>
+						      <td><img src="{{ URL::asset ('bsd24_assets/neteller.png') }}" width="25" class="rounded-circle"> <span class="hiddenElem">Neteller</span></td>
+						      <td>500 USD</td>
+						      <td>Jon Doe</td>
+						      <td><span class="badge badge-primary">09/11/2019</span></td>
+						      <td><span class="badge badge-success hiddenElem"><i class="fa fa-check"></i> Completed</span></td>
+						    </tr>
+						  </tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 			<div class="col-lg-3">
@@ -235,7 +311,74 @@
 						</span>
 					</div> 
 				</div>
+				<div class="box2nd100">
+					<h5 class="box2ndHeader">Today Exchange Rate</h5>
+					<table class="table table-hover">
+					  <thead>
+					    <tr>
+					      <th scope="col">Currency</th>
+					      <th scope="col">Buy</th>
+					      <th scope="col">Sell</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr>
+					      <td><img src="{{ URL::asset ('bsd24_assets/skrill.png') }}" width="25" class="rounded-circle"> Skrill</td>
+					      <td>80</td>
+					      <td>100</td>
+					    </tr>
+					    <td><img src="{{ URL::asset ('bsd24_assets/neteller.png') }}" width="25" class="rounded-circle"> Neteller</td>
+					      <td>80</td>
+					      <td>100</td>
+					    </tr>
+					    <td><img src="{{ URL::asset ('bsd24_assets/paypal.jpg') }}" width="25" class="rounded-circle"> Paypal</td>
+					      <td>80</td>
+					      <td>100</td>
+					    </tr>
+					    <td><img src="{{ URL::asset ('bsd24_assets/payoneer.png') }}" width="25" class="rounded-circle"> Payoneer</td>
+					      <td>80</td>
+					      <td>100</td>
+					    </tr>
+					    <td><img src="{{ URL::asset ('bsd24_assets/webmoney.png') }}" width="25" class="rounded-circle"> WebMoney</td>
+					      <td>80</td>
+					      <td>100</td>
+					    </tr>
+					    <td><img src="{{ URL::asset ('bsd24_assets/pm.png') }}" width="25" class="rounded-circle"> PM</td>
+					      <td>80</td>
+					      <td>100</td>
+					    </tr>
+					    <td><img src="{{ URL::asset ('bsd24_assets/coinbase.png') }}" width="25" class="rounded-circle"> Coinbase</td>
+					      <td>80</td>
+					      <td>100</td>
+					    </tr>
+					  </tbody>
+					</table>
+				</div>
+				<div class="box2nd100">
+					<h5 class="box2ndHeader">Track Exchange</h5>
+					<div style="padding: 10px;">
+						<input type="text" name="" class="form-control">
+						<button type="button" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Track</button>
+					</div>
+				</div>
 			</div>
+		</div>
+		<div>
+			<marquee behavior="scroll" direction="left" 
+	          onmouseover="this.stop();" 
+	          onmouseout="this.start();" style="margin-bottom: -4px; color:#fff;">
+	            <img src="{{ URL::asset ('bsd24_assets/nagad.jpg') }}" width="100" class="rounded-circle">
+	            <img src="{{ URL::asset ('bsd24_assets/bkash.png') }}" width="100" class="rounded-circle">
+	            <img src="{{ URL::asset ('bsd24_assets/rocket.png') }}" width="100" class="rounded-circle">
+	            <img src="{{ URL::asset ('bsd24_assets/skrill.png') }}" width="100" class="rounded-circle">
+	            <img src="{{ URL::asset ('bsd24_assets/pm.png') }}" width="100" class="rounded-circle">
+	            <img src="{{ URL::asset ('bsd24_assets/coinbase.png') }}" width="100" class="rounded-circle">
+	            <img src="{{ URL::asset ('bsd24_assets/neteller.png') }}" width="100" class="rounded-circle">
+	            <img src="{{ URL::asset ('bsd24_assets/city-bank.png') }}" width="100" class="rounded-circle">
+	            <img src="{{ URL::asset ('bsd24_assets/dbbl.png') }}" width="100" class="rounded-circle">
+	            <img src="{{ URL::asset ('bsd24_assets/bkash_agent.png') }}" width="100" class="rounded-circle">
+	            <img src="{{ URL::asset ('bsd24_assets/rocket_agent.jpg') }}" width="100" class="rounded-circle">
+	        </marquee> 
 		</div>
 	</div>
 	<!--Please, place all your div/box/anything inside the above SECTION-->

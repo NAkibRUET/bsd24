@@ -27,6 +27,10 @@ label{
   border: 0.5px solid #99ff99;
   margin-bottom: 10px;
 }
+.tableDiv{
+  padding:0px 15px; padding-bottom: 10px; font-size: 14px;
+}
+
 /* ReviewBox Start*/
 .reviewBox p{
     padding-top:20px;
@@ -695,6 +699,7 @@ label{
   }
 }
 @media screen and (max-width: 550px) {
+ 
   .topnav .icon {
     font-size:20px;
   }
@@ -715,6 +720,12 @@ label{
   color: white;
 }
 @media screen and (max-width: 520px) {
+  .hiddenElem{
+    display: none;
+  }
+  .tableDiv{
+    padding:0px 5px; padding-bottom: 10px; font-size: 12px;
+  }
   .box80{
     width: 95%; padding: 30px 35px;
   }
@@ -760,6 +771,10 @@ label{
   color: white;
 }
 @media screen and (max-width: 420px) {
+  
+  .tableDiv{
+    padding:0px 5px; padding-bottom: 10px; font-size: 10px;
+  }
   .section{
     padding-top: 150px;
     padding-bottom: 650px;
@@ -803,7 +818,17 @@ label{
   padding: 10px 10px;
   color: white;
 }
+@media screen and (max-width: 375px) {
+  .hiddenElem2{
+    display: none;
+  }
+}
 
+@media screen and (max-width: 325px) {
+  .tableDiv{
+    padding:0px 0px; padding-bottom: 10px; font-size: 8.5px;
+  }
+}
 /*.topnav {
   overflow: hidden;
   background-color: #333;
