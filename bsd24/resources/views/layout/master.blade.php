@@ -51,9 +51,8 @@
 	        <marquee behavior="scroll" direction="left" 
 	          onmouseover="this.stop();" 
 	          onmouseout="this.start();" style="margin-bottom: -4px; color:#fff;">
-	            <a><i class="fa fa-angle-double-right" ></i> নোবিপ্রবি'তে আওয়ামীপন্থী শিক্ষকদের নীল দল গঠন</a>
-	            <a><i class="fa fa-angle-double-right" ></i> নোবিপ্রবি'তে আওয়ামীপন্থী শিক্ষকদের নীল দল গঠন</a>
-	            <a><i class="fa fa-angle-double-right" ></i> নোবিপ্রবি'তে আওয়ামীপন্থী শিক্ষকদের নীল দল গঠন</a>
+	            <a><i class="fa fa-angle-double-right" ></i> কোন লেনদেনের ক্ষেত্রে ১০ মিনিট এর বেশি সময় অতিবাহিত হলে এসএমএস অথবা ফোন করুন।</a>
+	            <a><i class="fa fa-angle-double-right" ></i> NETELLER ও Skrill ৩০$ এর কম কেনার ক্ষেত্রে Transfer fee সহ টাকা পাঠানোর জন্য অনুরোধ করা হলো।</a>
 	        </marquee> 
 	      </div>
 	    
@@ -63,7 +62,7 @@
 			<div class="topnav" id="myTopnav">
 			  <a><img class="logo" src="{{ URL::asset ('bsd24_assets/LogoBSD.png') }}" ></a>
               <a href="{{URL::to('/')}}" class="nav_content">Home</a>
-			  <a href="" class="nav_content">Review</a>
+			  <a href="{{URL::to('/reviews')}}" class="nav_content">Review</a>
 			  <a href="" class="nav_content">Vip Program</a>
 			  <a href="" class="nav_content">History</a>
 			  <a href="{{URL::to('/contact_us')}}" class="nav_content">Contact</a>

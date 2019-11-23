@@ -46,7 +46,7 @@ label{
     margin-top: 20px;
     position:relative;
     background:#fff;
-    border-left: 3px solid #1B6DC1;
+    border-left: 4px solid #1B6DC1;
   }
   .reviewBox:after{
     content: '';
@@ -468,6 +468,16 @@ label{
 .footer .footerOneTwo{
   background: #1B6DC1; width: 100%; margin: 0; padding-top: 5px;
 }
+.hoverEffect{
+    transition: 0.5s;
+    cursor: pointer;
+}
+.hoverEffect:hover{
+    -moz-box-shadow: 0 0 13px #999;
+    -webkit-box-shadow: 0 0 13px #999;
+    box-shadow: 0 0 13px #999;
+}
+
 @media screen and (max-width: 1280px) {
   .logo{
     margin-right: 430px;
