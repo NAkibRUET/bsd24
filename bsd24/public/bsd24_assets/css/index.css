@@ -27,6 +27,10 @@ label{
   border: 0.5px solid #99ff99;
   margin-bottom: 10px;
 }
+.tableDiv{
+  padding:0px 15px; padding-bottom: 10px; font-size: 14px;
+}
+
 /* ReviewBox Start*/
 .reviewBox p{
     padding-top:20px;
@@ -42,7 +46,7 @@ label{
     margin-top: 20px;
     position:relative;
     background:#fff;
-    border-left: 3px solid #1B6DC1;
+    border-left: 4px solid #1B6DC1;
   }
   .reviewBox:after{
     content: '';
@@ -464,6 +468,16 @@ label{
 .footer .footerOneTwo{
   background: #1B6DC1; width: 100%; margin: 0; padding-top: 5px;
 }
+.hoverEffect{
+    transition: 0.5s;
+    cursor: pointer;
+}
+.hoverEffect:hover{
+    -moz-box-shadow: 0 0 13px #999;
+    -webkit-box-shadow: 0 0 13px #999;
+    box-shadow: 0 0 13px #999;
+}
+
 @media screen and (max-width: 1280px) {
   .logo{
     margin-right: 430px;
@@ -695,6 +709,7 @@ label{
   }
 }
 @media screen and (max-width: 550px) {
+ 
   .topnav .icon {
     font-size:20px;
   }
@@ -715,6 +730,12 @@ label{
   color: white;
 }
 @media screen and (max-width: 520px) {
+  .hiddenElem{
+    display: none;
+  }
+  .tableDiv{
+    padding:0px 5px; padding-bottom: 10px; font-size: 12px;
+  }
   .box80{
     width: 95%; padding: 30px 35px;
   }
@@ -760,6 +781,10 @@ label{
   color: white;
 }
 @media screen and (max-width: 420px) {
+  
+  .tableDiv{
+    padding:0px 5px; padding-bottom: 10px; font-size: 10px;
+  }
   .section{
     padding-top: 150px;
     padding-bottom: 650px;
@@ -803,7 +828,17 @@ label{
   padding: 10px 10px;
   color: white;
 }
+@media screen and (max-width: 375px) {
+  .hiddenElem2{
+    display: none;
+  }
+}
 
+@media screen and (max-width: 325px) {
+  .tableDiv{
+    padding:0px 0px; padding-bottom: 10px; font-size: 8.5px;
+  }
+}
 /*.topnav {
   overflow: hidden;
   background-color: #333;
