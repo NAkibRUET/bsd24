@@ -85,39 +85,7 @@
   					<button class="btn btn-primary w-100" type="button">Exchange</button>
 				</div>
 
-				<div class="box2nd95">
-					<h5 class="box2ndHeader">Reviews</h5>
-					<section class="lazy slider">
-					    <div class="reviewBox">
-					      <div class="quoteSignOne"></div>
-					      <div class="quoteSignTwo"></div>
-					      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
-					      <div class=""></div>
-					      <h1>by <span>sunita due</span></h1>
-					    </div>
-					    <div class="reviewBox">
-					      <div class="quoteSignOne"></div>
-					      <div class="quoteSignTwo"></div>
-					      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
-					      <div class=""></div>
-					      <h1>by <span>sunita due</span></h1>
-					    </div>
-					    <div class="reviewBox">
-					      <div class="quoteSignOne"></div>
-					      <div class="quoteSignTwo"></div>
-					      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
-					      <div class=""></div>
-					      <h1>by <span>Tahsin</span></h1>
-					    </div>
-					    <div class="reviewBox">
-					      <div class="quoteSignOne"></div>
-					      <div class="quoteSignTwo"></div>
-					      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
-					      <div class=""></div>
-					      <h1>by <span>Nakib</span></h1>
-					    </div>
-				 	</section>
-				</div>
+				
 				<div class="box2nd95">
 					<h5 class="box2ndHeader">Latest Buy Sell (Processing)</h5>
 					<div class="tableDiv">
@@ -193,6 +161,39 @@
 						  </tbody>
 						</table>
 					</div>
+				</div>
+				<div class="box2nd95">
+					<h5 class="box2ndHeader">Reviews</h5>
+					<section class="lazy slider">
+					    <div class="reviewBox">
+					      <div class="quoteSignOne"></div>
+					      <div class="quoteSignTwo"></div>
+					      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
+					      <div class=""></div>
+					      <h1>by <span>sunita due</span></h1>
+					    </div>
+					    <div class="reviewBox">
+					      <div class="quoteSignOne"></div>
+					      <div class="quoteSignTwo"></div>
+					      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
+					      <div class=""></div>
+					      <h1>by <span>sunita due</span></h1>
+					    </div>
+					    <div class="reviewBox">
+					      <div class="quoteSignOne"></div>
+					      <div class="quoteSignTwo"></div>
+					      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
+					      <div class=""></div>
+					      <h1>by <span>Tahsin</span></h1>
+					    </div>
+					    <div class="reviewBox">
+					      <div class="quoteSignOne"></div>
+					      <div class="quoteSignTwo"></div>
+					      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
+					      <div class=""></div>
+					      <h1>by <span>Nakib</span></h1>
+					    </div>
+				 	</section>
 				</div>
 			</div>
 			<div class="col-lg-3">
