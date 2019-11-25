@@ -24,4 +24,8 @@ Route::get('/reviews', "bsd24_mainController@reviews");
 route::get('/bsd24_admin/private/login','bsd24_mainController@login');
 
 
-route::get('/admin_home_page', 'bsd24_mainController@admin_home_page');
+
+route::get('/admin/login', 'adminController@admin_login');
+route::post('/admin/login', 'adminController@admin_login_request');
+
+route::get('/admin_home_page', 'adminController@admin_home_page')->middleware('admin_permission');

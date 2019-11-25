@@ -26,7 +26,5 @@ class bsd24_mainController extends Controller
     {
         return view('bsd24_reviews');
     }
-    function admin_home_page(){
-        return view('bsd24_admin/html/index');
-    }
+    
 }
