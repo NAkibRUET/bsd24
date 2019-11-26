@@ -8,6 +8,7 @@ body {
 label{
   color: #7f7f7f;
   font-weight: bold;
+  padding-top: 10px;
 }
 .alertDanger{
   padding: 5px 5px;
@@ -230,7 +231,7 @@ label{
 .boxHeader{
   color: #1B6DC1;
   font-weight: bold;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 .reserveDiv{
   padding:5px 15px; padding-bottom:60px;
@@ -268,8 +269,8 @@ label{
   z-index: 10; 
   box-shadow: 0px 3px 13px 0px rgba(0,0,0,0.2); 
   background: white; 
-  position: fixed; 
-  top: 100; 
+  /*position: fixed; 
+  top: 100; */
   width: 100%;
 }
 .top-wrapper {
@@ -447,7 +448,7 @@ label{
   font-weight: bold; font-size: 14px; padding: 0; margin: 0; color: #7f7f7f;
 }
 .section{
-  padding-top: 140px;
+  padding-top: 10px;
   padding-bottom: 250px;
   min-height: 700px;
 }
