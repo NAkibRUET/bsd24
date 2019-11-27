@@ -27,8 +27,48 @@ class adminController extends Controller
         }
     }
 
-    function admin_home_page(){
+    public function admin_home_page(){
         return view('bsd24_admin/html/index');
+    }
+
+    public function our_reserve()
+    {
+        $all_reserve = DB::table('our_reserve_amounts')->orderBy('reserve_name', 'ASC')->get();
+        return view('bsd24_admin/html/our_reserve')->with('all_reserve',$all_reserve);
+    }
+    public function add_a_new_reserve()
+    {
+        return view('bsd24_admin/html/add_a_new_reserve');
+    }
+    public function add_a_new_reserve_stor(request $data)
+    {
+        $reserve_name = $data->reserve_name;
+        $reserve_image="";
+        $reserve_currency=$data->reserve_currency;
+        $reserve_amount=$data->reserve_amount;
+        if($data->hasfile('reserve_image'))
+        {
+            $image_name = $data->file('reserve_image')->getClientOriginalName();
+            $name_upadate = $image_name;
+            $data->file('reserve_image')->move(public_path().'/bsd24_assets/reserved_file',$image_name);
+            //return ("succesfull inserted")
+
+            $make_array = array('reserve_name'=>$reserve_name, 'reserve_image'=>$image_name, 'reserve_currency'=>$reserve_currency, 'reserve_amount'=>$reserve_amount);
+            DB::table('our_reserve_amounts')->insert($make_array);
+            return view('bsd24_admin/html/add_a_new_reserve')->with('msg_status', "Successfully Inserted One Item");
+        }
+        else
+        {
+            //DB::table('our_reserve_amounts')->insert($make_array);
+            return view('bsd24_admin/html/add_a_new_reserve')->with('msg_status', "Something went Wrong try again");
+        }
+
+    }
+
+    public function reserve_update($id)
+    {
+        $specific_data = DB::table('our_reserve_amounts')->where('id', $id)->first();
+        return view('bsd24_admin/html/reserve_update')->with('sp_data', $specific_data);
     }
 
 
