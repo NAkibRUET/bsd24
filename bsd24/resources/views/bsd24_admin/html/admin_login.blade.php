@@ -156,7 +156,7 @@
 
 function pageRedirect_to_admin_panel() {
     window.location.replace("{{URL::to('/admin_home_page')}}");
-    }           
+}           
 
 $(document).ready(function(){
   $("#bsd_admin_login").click(function(event){

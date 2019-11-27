@@ -25,9 +25,6 @@ class adminController extends Controller
         else{
             return "unknown";
         }
-        
-
-        
     }
 
     function admin_home_page(){

@@ -5,12 +5,14 @@
     
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<link href="https://fonts.maateen.me/kalpurush/font.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset ('bsd24_assets/css/index.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset ('bsd24_assets/css/slick.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset ('bsd24_assets/css/slick-theme.css') }}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 	
@@ -22,8 +24,16 @@
 		      <!-- TOP LEFT -->
 		      <div class="col-md-5 col-sm-6">
 		        <div class="top-address uppernav">
-                <a href="{{URL::to('/login')}}" class=""><i class="fa fa-user"></i> Login</a>
-			  	  <a href="{{URL::to('/sign_up')}}">Sign Up</a>
+		        @if (Session::has('user_info'))
+					<a href="{{URL::to('/login')}}" class=""><i class="fa fa-user"></i> {{
+						Session::get('user_info.name')
+					}}</a>
+				@else
+					<a href="{{URL::to('/login')}}" class=""><i class="fa fa-user"></i> Login</a>
+			  	  	<a href="{{URL::to('/sign_up')}}">Sign Up</a>	
+					
+				@endif
+               
 		        </div>
 		      </div>
 		      <div class="col-md-3 col-sm-3">
@@ -143,56 +153,6 @@
   <script src="{{ URL::asset ('bsd24_assets/js/slick.js') }}" type="text/javascript" charset="utf-8"></script>
   <script type="text/javascript">
     $(document).on('ready', function() {
-      $(".vertical-center-4").slick({
-        dots: true,
-        vertical: true,
-        centerMode: true,
-        slidesToShow: 4,
-        slidesToScroll: 2
-      });
-      $(".vertical-center-3").slick({
-        dots: true,
-        vertical: true,
-        centerMode: true,
-        slidesToShow: 3,
-        slidesToScroll: 3
-      });
-      $(".vertical-center-2").slick({
-        dots: true,
-        vertical: true,
-        centerMode: true,
-        slidesToShow: 2,
-        slidesToScroll: 2
-      });
-      $(".vertical-center").slick({
-        dots: true,
-        vertical: true,
-        centerMode: true,
-      });
-      $(".vertical").slick({
-        dots: true,
-        vertical: true,
-        slidesToShow: 3,
-        slidesToScroll: 3
-      });
-      $(".regular").slick({
-        dots: true,
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 3
-      });
-      $(".center").slick({
-        dots: true,
-        infinite: true,
-        centerMode: true,
-        slidesToShow: 5,
-        slidesToScroll: 3
-      });
-      $(".variable").slick({
-        dots: true,
-        infinite: true,
-        variableWidth: true
-      });
       $(".lazy").slick({
         lazyLoad: 'ondemand', // ondemand progressive anticipated
         infinite: true
