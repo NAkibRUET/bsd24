@@ -31,3 +31,8 @@ route::get('/admin/login', 'adminController@admin_login');
 route::post('/admin/login', 'adminController@admin_login_request');
 
 route::get('/admin_home_page', 'adminController@admin_home_page')->middleware('admin_permission');
+route::get('/our_reserve', 'adminController@our_reserve')->middleware('admin_permission');
+route::get('/add_a_new_reserve', 'adminController@add_a_new_reserve')->middleware('admin_permission');
+route::post('/add_a_new_reserve', 'adminController@add_a_new_reserve_stor')->middleware('admin_permission');
+route::get('/reserve_update/{id}', 'adminController@reserve_update')->middleware('admin_permission');
+
