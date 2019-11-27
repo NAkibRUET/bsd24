@@ -1,6 +1,6 @@
 
 @extends('layout.master')
-@section('page_title', "Sign In | Buy & Sell dollar")
+@section('page_title', "Sign Up | Buy & Sell dollar")
 
 @section('dynamic_page')
 

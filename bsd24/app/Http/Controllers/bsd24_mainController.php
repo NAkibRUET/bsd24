@@ -26,6 +26,10 @@ class bsd24_mainController extends Controller
     {
         return view('bsd24_reviews');
     }
+    function profile()
+    {
+        return view('bsd24_profile');
+    }
     public function sign_up_request(request $data)
     {
         $fullName= $data->fullName; 

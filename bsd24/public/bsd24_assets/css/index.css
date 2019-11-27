@@ -266,7 +266,7 @@ label{
   
 }
 .top{
-  z-index: 10; 
+  z-index: 9999; 
   box-shadow: 0px 3px 13px 0px rgba(0,0,0,0.2); 
   background: white; 
   /*position: fixed; 
@@ -586,7 +586,7 @@ label{
     display: none;
   }
   .section{
-    padding-top: 150px;
+    padding-top: 15px;
     padding-bottom: 550px;
     min-height: 900px;
   }
@@ -787,7 +787,7 @@ label{
     padding:0px 5px; padding-bottom: 10px; font-size: 10px;
   }
   .section{
-    padding-top: 150px;
+    padding-top: 15px;
     padding-bottom: 650px;
     min-height: 1000px;
   }
