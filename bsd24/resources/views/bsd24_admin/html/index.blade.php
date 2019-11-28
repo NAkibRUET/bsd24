@@ -2,7 +2,30 @@
 @section('page_title', "Admin Home | Buy & Sell dollar")
 @section('admin_dynamic_page')
 
-            
+            <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+             <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+                        <h4 class="page-title">Dashboard</h4>
+                        <div class="ml-auto text-right">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{{URL::to('/admin_home_page')}}">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
             <!-- ============================================================== -->
             <!-- Container fluid  -->
             <!-- ============================================================== -->
@@ -55,12 +78,14 @@
                     </div>
                     <!-- Column -->
                     <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-info text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-arrow-all"></i></h1>
-                                <h6 class="text-white">Full Width</h6>
+                        <a href="{{URL::to('/send_receive_store')}}" style="">
+                            <div class="card card-hover">
+                                <div class="box bg-info text-center">
+                                    <h1 class="font-light text-white"><i class="fas fa-info-circle"></i></h1>
+                                    <h6 class="text-white">Send Receive Info Store</h6>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <!-- Column -->
                     <!-- Column -->
