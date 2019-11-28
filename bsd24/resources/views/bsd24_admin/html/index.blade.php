@@ -22,7 +22,7 @@
                     </div>
                     <!-- Column -->
                     <div class="col-md-6 col-lg-4 col-xlg-3">
-                        <a href="" style="">
+                    <a href="{{URL::to('/our_reserve')}}" style="">
                             <div class="card card-hover">
                                 <div class="box bg-success text-center">
                                     <h1 class="font-light text-white"><i class="fas fa-balance-scale"></i></h1>
