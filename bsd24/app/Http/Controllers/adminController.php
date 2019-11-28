@@ -11,6 +11,15 @@ class adminController extends Controller
     {
         return view('bsd24_admin/html/admin_login');
     }
+    public function exchange_operation()
+    {
+        return view('bsd24_admin/html/admin_exchange_operation');
+    }
+    public function send_receive_info()
+    {
+        return view('bsd24_admin/html/admin_send_receive_info');
+    }
+    
     public function admin_login_request(request $data)
     {
         $adminName = $data->adminName;

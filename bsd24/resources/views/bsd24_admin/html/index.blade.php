@@ -22,7 +22,7 @@
                     </div>
                     <!-- Column -->
                     <div class="col-md-6 col-lg-4 col-xlg-3">
-                    <a href="{{URL::to('/our_reserve')}}" style="">
+                        <a href="{{URL::to('/our_reserve')}}" style="">
                             <div class="card card-hover">
                                 <div class="box bg-success text-center">
                                     <h1 class="font-light text-white"><i class="fas fa-balance-scale"></i></h1>
@@ -33,21 +33,25 @@
                     </div>
                      <!-- Column -->
                     <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-warning text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-collage"></i></h1>
-                                <h6 class="text-white">Widgets</h6>
+                        <a href="{{URL::to('/exchange_operation')}}" style="">
+                            <div class="card card-hover">
+                                <div class="box bg-warning text-center">
+                                    <h1 class="font-light text-white"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-down"></i></h1>
+                                    <h6 class="text-white">Exchange Operation</h6>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <!-- Column -->
                     <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-danger text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-border-outside"></i></h1>
-                                <h6 class="text-white">Tables</h6>
+                        <a href="{{URL::to('/send_receive_info')}}" style="">
+                            <div class="card card-hover">
+                                <div class="box bg-danger text-center">
+                                    <h1 class="font-light text-white"><i class="fas fa-info"></i></h1>
+                                    <h6 class="text-white">Send/Receive Info</h6>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <!-- Column -->
                     <div class="col-md-6 col-lg-2 col-xlg-3">

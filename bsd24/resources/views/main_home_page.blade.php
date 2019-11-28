@@ -125,7 +125,7 @@
 					</div>
 				</div>
 				<div class="box2nd95">
-					<h5 class="box2ndHeader">Latest Buy Sell (Processing)</h5>
+					<h5 class="box2ndHeader">Latest Buy Sell (Completed)</h5>
 					<div class="tableDiv">
 						<table class="table table-striped table-hover">
 						  <thead>
