@@ -79,7 +79,8 @@ class bsd24_mainController extends Controller
                 $status = "ok";
                 $email = DB::table('bsd_user_informations')->where('user_email',$userEmail)->value('user_email');
                 $name = DB::table('bsd_user_informations')->where('user_email',$userEmail)->value('full_name');
-                $data = array('name' => $name, 'email' => $email);
+                $mobile = DB::table('bsd_user_informations')->where('user_email',$userEmail)->value('user_phone');
+                $data = array('name' => $name, 'email' => $email, 'mobile' => $mobile);
                 session(['user_info'=>$data]);
 
             }
