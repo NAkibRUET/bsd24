@@ -71,6 +71,40 @@ class adminController extends Controller
         return view('bsd24_admin/html/reserve_update')->with('sp_data', $specific_data);
     }
 
+    public function add_a_new_reserve_stor_update(request $data, $id)
+    {
+        $reserve_name = $data->reserve_name;
+        $reserve_image="";
+        $reserve_currency=$data->reserve_currency;
+        $reserve_amount=$data->reserve_amount;
+        if($data->hasfile('reserve_image'))
+        {
+            $image_name = $data->file('reserve_image')->getClientOriginalName();
+            $name_upadate = $image_name;
+            $data->file('reserve_image')->move(public_path().'/bsd24_assets/reserved_file',$image_name);
+            //return ("succesfull inserted")
+
+            DB::table('our_reserve_amounts')->where('id',$id)->update(['reserve_name'=>$reserve_name,'reserve_currency'=>$reserve_currency,'reserve_amount'=>$reserve_amount, 'reserve_image'=>$image_name]);
+
+            return redirect('/our_reserve');
+        }
+        else
+        {
+            DB::table('our_reserve_amounts')->where('id',$id)->update(['reserve_name'=>$reserve_name,'reserve_currency'=>$reserve_currency,'reserve_amount'=>$reserve_amount]);
+
+            return redirect('/our_reserve');
+        }
+        
+
+    }
+
+    public function delete_a_reserve($id)
+    {
+        $boss=DB::table('our_reserve_amounts')->where('id',$id)->delete();
+        //echo $id;
+        return redirect('/our_reserve');
+    }
+
 
 
 
