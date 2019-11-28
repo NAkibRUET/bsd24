@@ -25,7 +25,7 @@
 		      <div class="col-md-5 col-sm-6">
 		        <div class="top-address uppernav">
 		        @if (Session::has('user_info'))
-					<a href="{{URL::to('/login')}}" class=""><i class="fa fa-user"></i> {{
+					<a href="{{URL::to('/user_profile')}}" class=""><i class="fa fa-user"></i> {{
 						Session::get('user_info.name')
 					}}</a>
 				@else

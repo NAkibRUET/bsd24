@@ -15,6 +15,13 @@ class user_persmission
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        if ($request->session()->has('user_info')) {
+            
+            return $next($request);
+        }
+        else
+        {
+            return redirect('/login');
+        }
     }
 }
