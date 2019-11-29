@@ -21,7 +21,18 @@ class adminController extends Controller
     }
     public function send_receive_store()
     {
-        return view('bsd24_admin/html/admin_send_receive_store');
+        $all_data = DB::table('send_receive_infos')->get();
+        return view('bsd24_admin/html/admin_send_receive_store')->with('all_data',$all_data);
+    }
+    public function send_receive_store_delete($id)
+    {
+        $check = DB::table('send_receive_infos')->where('id',$id)->delete();
+        return back();
+    }
+    public function send_receive_store_update($id)
+    {
+        $data = DB::table('send_receive_infos')->where('id',$id)->first();
+        return view('bsd24_admin/html/admin_send_receive_info')->with('data',$data);
     }
     public function admin_login_request(request $data)
     {
@@ -48,6 +59,7 @@ class adminController extends Controller
         $all_reserve = DB::table('our_reserve_amounts')->orderBy('reserve_name', 'ASC')->get();
         return view('bsd24_admin/html/our_reserve')->with('all_reserve',$all_reserve);
     }
+
     public function add_a_new_reserve()
     {
         return view('bsd24_admin/html/add_a_new_reserve');
@@ -115,6 +127,23 @@ class adminController extends Controller
         $boss=DB::table('our_reserve_amounts')->where('id',$id)->delete();
         //echo $id;
         return redirect('/our_reserve');
+    }
+
+    public function send_receive_info_post(request $data)
+    {
+        $send_or_receive = $data->send_or_receive;
+        $operator_name  = $data->operator_name;
+        $card_or_phone = $data->card_or_phone;
+        $make_array = array('send_or_receive'=>$send_or_receive, 'operator_name'=>$operator_name, 'card_or_phone'=>$card_or_phone);
+        DB::table('send_receive_infos')->insert($make_array);
+
+        return view('bsd24_admin/html/admin_send_receive_info')->with('msg_status','SuccessFully Added one');
+    }
+
+    public function send_receive_info_post_update(request $data, $id)
+    {
+        DB::table('send_receive_infos')->where('id',$id)->update(['send_or_receive'=>$data->send_or_receive, 'operator_name'=>$data->operator_name, 'card_or_phone'=>$data->card_or_phone]);
+        return redirect('/send_receive_store');
     }
 
 

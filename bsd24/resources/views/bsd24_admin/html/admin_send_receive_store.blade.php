@@ -39,25 +39,26 @@
                     <table class="table table-striped table-hover">
                       <thead>
                         <tr>
-                          <th scope="col">#</th>
+                          <th scope="col">sl#</th>
                           <th scope="col">Send/Receive</th>
                           <th scope="col">Operator Type</th>
                           <th scope="col">Card/Phone No</th>
+                          <th scope="col">Action</th>
                         </tr>
                       </thead>
                       <tbody>
+                        <?php $i=1;?>
+                      @foreach ($all_data as $data)
                         <tr>
-                          <th scope="row">1</th>
-                          <td>Send</td>
-                          <td>Neteller</td>
-                          <td>090391049</td>
+                          <th scope="row">{{$i++}}</th>
+                          <td>{{$data->send_or_receive}}</td>
+                          <td>{{$data->operator_name}}</td>
+                          <td>{{$data->card_or_phone}}</td>
+                        <td><span><a href="send_receive_store/update/{{$data->id}}"><button class="btn btn-info btn-sm mr-3">update</button></a><a href="send_receive_store/delete/{{$data->id}}"><button class="btn btn-danger btn-sm">delete</button></a></span></td>
                         </tr>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Send</td>
-                          <td>Skrill</td>
-                          <td>097391049</td>
-                        </tr>
+                      @endforeach
+
+                       
                       </tbody>
                     </table>
                     <nav aria-label="Page navigation example">
