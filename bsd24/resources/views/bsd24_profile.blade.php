@@ -110,10 +110,10 @@
 $(document).ready(function(){
 	var fullName = $('#hiddenName').val();
 	var res = fullName.split(" ");
-  	var firstName = res[0];
+  	var firstName = res[0].toUpperCase();
   	console.log(res.length);
   	if(res.length>1){
- 		var lastName = res[1];
+ 		var lastName = res[1].toUpperCase();
  	}
  	console.log(res[0]);
  	if(res.length>1){

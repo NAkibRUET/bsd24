@@ -39,3 +39,6 @@ route::post('/add_a_new_reserve/{id}', 'adminController@add_a_new_reserve_stor_u
 route::get('/reserve_update/{id}', 'adminController@reserve_update')->middleware('admin_permission');
 route::get('/delete_reserve/{id}', 'adminController@delete_a_reserve')->middleware('admin_permission');
 
+route::get('/exchange_operation', 'adminController@exchange_operation')->middleware('admin_permission');
+route::get('/send_receive_info', 'adminController@send_receive_info')->middleware('admin_permission');
+route::get('/send_receive_store', 'adminController@send_receive_store')->middleware('admin_permission');
