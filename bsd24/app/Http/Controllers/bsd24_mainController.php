@@ -24,11 +24,16 @@ class bsd24_mainController extends Controller
     }
     function reviews()
     {
-        return view('bsd24_reviews');
+        $review = DB::table('bsd_reviews')->orderBy('id', 'DESC')->get();
+        return view('bsd24_reviews')->with('review',$review);
     }
     function profile()
     {
         return view('bsd24_profile');
+    }
+    function exchange_operation_view()
+    {
+        return view('bsd24_exchange_operation');
     }
     public function sign_up_request(request $data)
     {
