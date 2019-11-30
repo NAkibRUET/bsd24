@@ -21,6 +21,7 @@ Route::get("/login", "bsd24_mainController@login");
 Route::post("/login", "bsd24_mainController@login_request");
 Route::get('/sign_up', "bsd24_mainController@sign_up");
 Route::post('/sign_up/request', "bsd24_mainController@sign_up_request");
+Route::get('/exchange_operation_view', "bsd24_mainController@exchange_operation_view");
 Route::get('/contact_us', "bsd24_mainController@contact_us");
 Route::get('/reviews', "bsd24_mainController@reviews");
 Route::post('/review', "bsd24_mainController@reviews_submit");

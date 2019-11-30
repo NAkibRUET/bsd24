@@ -165,34 +165,15 @@
 				<div class="box2nd95">
 					<h5 class="box2ndHeader">Reviews</h5>
 					<section class="lazy slider">
-					    <div class="reviewBox">
+						@foreach ($review as $i)
+					    <div class="reviewBox" style="min-height: 200px;">
 					      <div class="quoteSignOne"></div>
 					      <div class="quoteSignTwo"></div>
-					      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
+					      <p>{{$i->review_comment}}</p>
 					      <div class=""></div>
-					      <h1>by <span>sunita due</span></h1>
+					      <h1>by <span>{{$i->full_name}}</span></h1>
 					    </div>
-					    <div class="reviewBox">
-					      <div class="quoteSignOne"></div>
-					      <div class="quoteSignTwo"></div>
-					      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
-					      <div class=""></div>
-					      <h1>by <span>sunita due</span></h1>
-					    </div>
-					    <div class="reviewBox">
-					      <div class="quoteSignOne"></div>
-					      <div class="quoteSignTwo"></div>
-					      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
-					      <div class=""></div>
-					      <h1>by <span>Tahsin</span></h1>
-					    </div>
-					    <div class="reviewBox">
-					      <div class="quoteSignOne"></div>
-					      <div class="quoteSignTwo"></div>
-					      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
-					      <div class=""></div>
-					      <h1>by <span>Nakib</span></h1>
-					    </div>
+					    @endforeach
 				 	</section>
 				</div>
 			</div>

@@ -1,5 +1,5 @@
 @extends('bsd24_admin.html.layout.master')
-@section('page_title', "Store | Send Receive info")
+@section('page_title', "Admin | Review")
 @section('admin_dynamic_page')
             
         <!-- Page wrapper  -->
