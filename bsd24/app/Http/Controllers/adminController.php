@@ -184,9 +184,29 @@ class adminController extends Controller
         return $factor;
     }
 
-
-
-
-
+    
+    /*Review Handling*/
+    public function admin_review()
+    {
+        $admin_review = DB::table('bsd_reviews')->orderBy('id', 'DESC')->get();
+        return view('bsd24_admin/html/admin_review')->with('admin_review',$admin_review);
+    }
+    public function show_accept_review($id)
+    {
+        $show_review = DB::table('bsd_reviews')->where('id', $id)->get();
+        return view('bsd24_admin/html/admin_review_accept')->with('show_review',$show_review);
+    }
+    public function update_review($id)
+    {   
+        $check = DB::table('bsd_reviews')->where('id',$id)->update(['status'=>'1']);
+        if($check)
+        {
+            $status = "ok";
+            return redirect('/admin_review');
+        }
+        else{
+            return redirect('/admin_review');
+        }
+    }
 
 }

@@ -51,4 +51,7 @@ route::get('/currency_equivalent', 'adminController@currency_equivalent');
 route::post('/currency_equivalent', 'adminController@currency_equivalent_post');
 route::get('/currency_equivalent/currency_check','adminController@currency_check');
 
+route::get('/admin_review/{id}', 'adminController@show_accept_review')->middleware('admin_permission');
+route::get('/admin_review', 'adminController@admin_review')->middleware('admin_permission');
+route::get('/admin_review/update/{id}', 'adminController@update_review')->middleware('admin_permission');
 
