@@ -5,8 +5,6 @@
 @section('dynamic_page')
 
 
-
-
 	<!--SECTION STARTS HERE -->
 	<!--Please, place all your div/box/anything inside the above SECTION-->
 	<div class="section" style="">
@@ -25,96 +23,22 @@
 			</div>
 		</div>
 		@endif
+		
+			<input type="hidden" id="hiddenReview" name="review" value="{{$review}}">
+		
 		<div class="container">
-			<div class="row" style="padding:0px 20px;">
-				<div class="col-md-6">
-				    <div class="reviewBox hoverEffect" style="margin-bottom:10px;">
+			<div class="row pagination-example" style="padding:0px 20px;">
+				@foreach ($review as $data)
+				    <div class=" col-md-6 reviewBox hoverEffect paged-element" style="margin-bottom:10px;">
 				      <div class="quoteSignOne"></div>
 				      <div class="quoteSignTwo"></div>
-				      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
+				      <p>{{$data->review_comment}}</p>
 				      <div class=""></div>
-				      <h1>by <span>Nakib</span></h1>
+				      <h1>by <span>{{$data->full_name}}</span></h1>
 				    </div>
-				    <div class="reviewBox hoverEffect" style="margin-bottom:10px;">
-				      <div class="quoteSignOne"></div>
-				      <div class="quoteSignTwo"></div>
-				      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
-				      <div class=""></div>
-				      <h1>by <span>Nakib</span></h1>
-				    </div>
-				    <div class="reviewBox hoverEffect" style="margin-bottom:10px;">
-				      <div class="quoteSignOne"></div>
-				      <div class="quoteSignTwo"></div>
-				      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
-				      <div class=""></div>
-				      <h1>by <span>Nakib</span></h1>
-				    </div>
-				    <div class="reviewBox hoverEffect" style="margin-bottom:10px;">
-				      <div class="quoteSignOne"></div>
-				      <div class="quoteSignTwo"></div>
-				      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
-				      <div class=""></div>
-				      <h1>by <span>Nakib</span></h1>
-				    </div>
-				    <div class="reviewBox hoverEffect" style="margin-bottom:10px;">
-				      <div class="quoteSignOne"></div>
-				      <div class="quoteSignTwo"></div>
-				      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
-				      <div class=""></div>
-				      <h1>by <span>Nakib</span></h1>
-				    </div>
-				</div>
-				<div class="col-md-6">
-				    <div class="reviewBox hoverEffect" style="margin-bottom:10px;">
-				      <div class="quoteSignOne"></div>
-				      <div class="quoteSignTwo"></div>
-				      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
-				      <div class=""></div>
-				      <h1>by <span>Nakib</span></h1>
-				    </div>
-				    <div class="reviewBox hoverEffect" style="margin-bottom:10px;">
-				      <div class="quoteSignOne"></div>
-				      <div class="quoteSignTwo"></div>
-				      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
-				      <div class=""></div>
-				      <h1>by <span>Nakib</span></h1>
-				    </div>
-				    <div class="reviewBox hoverEffect" style="margin-bottom:10px;">
-				      <div class="quoteSignOne"></div>
-				      <div class="quoteSignTwo"></div>
-				      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
-				      <div class=""></div>
-				      <h1>by <span>Nakib</span></h1>
-				    </div>
-				    <div class="reviewBox hoverEffect" style="margin-bottom:10px;">
-				      <div class="quoteSignOne"></div>
-				      <div class="quoteSignTwo"></div>
-				      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
-				      <div class=""></div>
-				      <h1>by <span>Nakib</span></h1>
-				    </div>
-				    <div class="reviewBox hoverEffect" style="margin-bottom:10px;">
-				      <div class="quoteSignOne"></div>
-				      <div class="quoteSignTwo"></div>
-				      <p>Duis sed odio sit ameta sit mt mauris. Morbi accumsan ipsum velit. Nam nec tellus  odio tincidunt auctor a ornare.</p>
-				      <div class=""></div>
-				      <h1>by <span>Nakib</span></h1>
-				    </div>
-				</div>
+				 @endforeach   
 			</div>
-			<nav aria-label="Page navigation example">
-			  <ul class="pagination justify-content-center">
-			    <li class="page-item disabled">
-			      <a class="page-link" href="#" tabindex="-1">Previous</a>
-			    </li>
-			    <li class="page-item"><a class="page-link" href="#">1</a></li>
-			    <li class="page-item"><a class="page-link" href="#">2</a></li>
-			    <li class="page-item"><a class="page-link" href="#">3</a></li>
-			    <li class="page-item">
-			      <a class="page-link" href="#">Next</a>
-			    </li>
-			  </ul>
-			</nav>
+
 		</div>
 	</div>
 	<!--Please, place all your div/box/anything inside the above SECTION-->
@@ -143,6 +67,83 @@ function review_size(data){
 		document.getElementById('reviewBtn').disabled = false;
 	}
 }
+$(document).ready(function(){
+	let reviewData = JSON.parse($('#hiddenReview').val());
+	
+});
+(function(){ 
+  paginateChildren($('.pagination-example'));
+}(jQuery));
+
+function paginateChildren(parentElement) {
+    var page = 1;
+    var currentElements;
+    var offsetStart;
+    var offsetEnd;
+    var currentPage = 1;
+    var elementsPerPage = 8;
+    var elements = parentElement.find($('.paged-element'));
+    var nmbrOfPages = Math.ceil(elements.length / elementsPerPage);
+    var displayNav = function () {
+        htmlNav = '<div class="paginationNav col-md-12">';
+        htmlNav += '<span>' + currentPage + ' of ' + nmbrOfPages + '</span><br />';
+        htmlNav += '<a href="#" title="Previous" rel="" class="prev"><i class="fa fa-angle-left fa-lg"></i></a>';
+        htmlNav += '<a href="#" title="Next" rel="" class="next active"><i class="fa fa-angle-right fa-lg"></i></a>';
+        htmlNav += '</div>';
+        if (!$(parentElement).find('.paginationNav').length) {
+            $(parentElement).append(htmlNav);
+        }
+    };
+    $(parentElement).on('click', '.paginationNav a.prev', function (e) {
+        e.preventDefault();
+        page = currentPage > 1 ? parseInt(currentPage) - 1 : 1;
+        displayPage(page);
+    });
+    $(parentElement).on('click', '.paginationNav a.next', function (e) {
+        e.preventDefault();
+        page = currentPage < nmbrOfPages ? parseInt(currentPage) + 1 : nmbrOfPages;
+        displayPage(page);
+    });
+    var displayPage = function (page) {
+        if (currentPage != page || page == 1) {
+            currentPage = parseInt(page);
+            $('.paginationNav span', parentElement).html(currentPage + ' of ' + nmbrOfPages);
+            var $prevButton = $('.paginationNav a.prev');
+            var $nextButton = $('.paginationNav a.next');
+            if (currentPage == 1 && nmbrOfPages > 1) {
+                if ($prevButton.hasClass('active')) {
+                    $prevButton.removeClass('active');
+                }
+                $nextButton.addClass('active');
+            } else if (currentPage > 1 && currentPage < nmbrOfPages) {
+                $prevButton.addClass('active');
+                $nextButton.addClass('active');
+            } else if (nmbrOfPages > 1 && currentPage == nmbrOfPages) {
+                $prevButton.addClass('active');
+                if ($nextButton.hasClass('active')) {
+                    $nextButton.removeClass('active');
+                }
+            }
+            offsetStart = (page - 1) * elementsPerPage;
+            offsetEnd = page * elementsPerPage;
+            if (currentElements) {
+                currentElements.hide();
+            } else {
+                elements.hide();
+            }
+            currentElements = elements.slice(offsetStart, offsetEnd);
+            currentElements.fadeIn();
+        }
+    };
+    if (page.length <= 0 || page < 1 || page > nmbrOfPages) {
+        page = 1;
+    }
+    displayPage(page);
+    if (nmbrOfPages > 1) {
+        displayNav();
+    }
+}
+
 
 $(document).ready(function(){
   $("#reviewBtn").click(function(event){

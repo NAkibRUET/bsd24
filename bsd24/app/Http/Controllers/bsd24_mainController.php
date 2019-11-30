@@ -24,7 +24,7 @@ class bsd24_mainController extends Controller
     }
     function reviews()
     {
-        $review = DB::table('bsd_reviews')->orderBy('id', 'DESC')->get();
+        $review = DB::table('bsd_reviews')->where('status','1')->orderBy('id', 'DESC')->get();
         return view('bsd24_reviews')->with('review',$review);
     }
     function profile()
