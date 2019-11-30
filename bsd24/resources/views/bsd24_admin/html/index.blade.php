@@ -101,12 +101,14 @@
                     </div>
                     <!-- Column -->
                     <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-info text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-relative-scale"></i></h1>
-                                <h6 class="text-white">Buttons</h6>
+                        <a href="{{URL::to('/admin_review')}}" style="">
+                            <div class="card card-hover">
+                                <div class="box bg-info text-center">
+                                    <h1 class="font-light text-white"><i class="fas fa-comments"></i></h1>
+                                    <h6 class="text-white">Review</h6>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                      <!-- Column -->
                     <div class="col-md-6 col-lg-2 col-xlg-3">
