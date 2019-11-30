@@ -8,7 +8,8 @@ class bsd24_mainController extends Controller
 {
     function bsd24_home_page()
     {
-        return view('main_home_page');
+        $review = DB::table('bsd_reviews')->where('status','1')->orderBy('id', 'DESC')->take(10)->get();
+        return view('main_home_page')->with('review',$review);
     }
     function login()
     {
