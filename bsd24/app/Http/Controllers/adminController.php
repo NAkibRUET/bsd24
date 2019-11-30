@@ -145,6 +145,44 @@ class adminController extends Controller
         DB::table('send_receive_infos')->where('id',$id)->update(['send_or_receive'=>$data->send_or_receive, 'operator_name'=>$data->operator_name, 'card_or_phone'=>$data->card_or_phone]);
         return redirect('/send_receive_store');
     }
+    public function currency_equivalent()
+    {
+        return view('bsd24_admin/html/currency_equivalent');
+    }
+    public function currency_equivalent_post(request $data)
+    {
+        $conversion_from = $data->conversion_from;
+        $conversion_to = $data->conversion_to;
+        $conversion_factor = $data->conversion_factor;
+        $update_selector = $data->update_selector;
+        if($update_selector==0){
+        
+            $make_array = array('conversion_from'=>$conversion_from, 'conversion_to'=>$conversion_to,'conversion_factor'=>$conversion_factor);
+            DB::table('currency_equivalents')->insert($make_array);
+
+            return view('bsd24_admin/html/currency_equivalent')->with('msg_status', 'Successfully added one');
+        }
+        else
+        {
+            DB::table('currency_equivalents')->where('conversion_from',$conversion_from)->where('conversion_to',$conversion_to)->update(['conversion_factor'=>$conversion_factor]);
+            return view('bsd24_admin/html/currency_equivalent')->with('msg_status', 'Updated Successfully...');
+        }
+
+    }
+    public function currency_check(request $data)
+    {
+        $conversion_from = $data->conversion_from;
+        $conversion_to = $data->conversion_to;
+        $check = DB::table('currency_equivalents')->where('conversion_from',$conversion_from)->where('conversion_to',$conversion_to)->first();
+        if($check)
+        {
+            $factor = $check->conversion_factor;
+        }
+        else{
+            $factor = 0;
+        }
+        return $factor;
+    }
 
 
 

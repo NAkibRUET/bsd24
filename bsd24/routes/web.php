@@ -46,5 +46,8 @@ route::post('send_receive_info/{id}', 'adminController@send_receive_info_post_up
 route::get('/send_receive_store', 'adminController@send_receive_store')->middleware('admin_permission');
 route::get('/send_receive_store/delete/{id}', 'adminController@send_receive_store_delete')->middleware('admin_permission');
 route::get('/send_receive_store/update/{id}', 'adminController@send_receive_store_update')->middleware('admin_permission');
+route::get('/currency_equivalent', 'adminController@currency_equivalent');
+route::post('/currency_equivalent', 'adminController@currency_equivalent_post');
+route::get('/currency_equivalent/currency_check','adminController@currency_check');
 
 

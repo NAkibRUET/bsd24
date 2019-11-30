@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{URL::asset('bsd24_assets/admin_asset/assets/images/favicon.png')}}">
     <title>@yield('page_title')</title>
     <!-- Custom CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link href="{{URL::asset('bsd24_assets/admin_asset/assets/libs/flot/css/float-chart.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{URL::asset('bsd24_assets/admin_asset/dist/css/style.min.css') }}" rel="stylesheet">
@@ -270,6 +271,7 @@
     <!-- All Jquery -->
     <!-- ============================================================== -->
     <script src="{{URL::asset('bsd24_assets/admin_asset/assets/libs/jquery/dist/jquery.min.js')}}"></script>
+    
     <!-- Bootstrap tether Core JavaScript -->
     <script src="{{URL::asset('bsd24_assets/admin_asset/assets/libs/popper.js/dist/umd/popper.min.js')}}"></script>
     <script src="{{URL::asset('bsd24_assets/admin_asset/assets/libs/bootstrap/dist/js/bootstrap.min.js')}}"></script>

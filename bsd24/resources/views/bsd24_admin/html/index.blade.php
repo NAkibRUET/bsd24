@@ -90,12 +90,14 @@
                     <!-- Column -->
                     <!-- Column -->
                     <div class="col-md-6 col-lg-4 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-danger text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-receipt"></i></h1>
-                                <h6 class="text-white">Forms</h6>
+                        <a href="{{URL::to('/currency_equivalent')}}" style="">
+                            <div class="card card-hover">
+                                <div class="box bg-danger text-center">
+                                    <h1 class="font-light text-white"><i class="far fa-money-bill-alt"></i></h1>
+                                    <h6 class="text-white">Currency Equavalent</h6>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <!-- Column -->
                     <div class="col-md-6 col-lg-2 col-xlg-3">
