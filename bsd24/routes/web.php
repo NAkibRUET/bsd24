@@ -24,6 +24,7 @@ Route::post('/sign_up/request', "bsd24_mainController@sign_up_request");
 Route::get('/exchange_operation_view', "bsd24_mainController@exchange_operation_view");
 Route::post('/exchange_operation_view', "bsd24_mainController@exchange_operation_view_post");
 Route::get('/contact_us', "bsd24_mainController@contact_us");
+Route::post('/contact_us', "bsd24_mainController@contact_request");
 Route::get('/reviews', "bsd24_mainController@reviews");
 Route::post('/review', "bsd24_mainController@reviews_submit");
 Route::get('/user_profile', "bsd24_mainController@profile")->middleware('user_persmission');
@@ -58,4 +59,6 @@ route::get('/currency_equivalent/currency_check','adminController@currency_check
 route::get('/admin_review/{id}', 'adminController@show_accept_review')->middleware('admin_permission');
 route::get('/admin_review', 'adminController@admin_review')->middleware('admin_permission');
 route::get('/admin_review/update/{id}', 'adminController@update_review')->middleware('admin_permission');
+
+route::get('/admin_contact_us', 'adminController@admin_contact_us')->middleware('admin_permission');
 

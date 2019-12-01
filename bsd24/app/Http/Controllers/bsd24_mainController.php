@@ -183,7 +183,33 @@ class bsd24_mainController extends Controller
         
     }
 
+    
+    public function contact_request(request $data){
+        $userName= $data->userName;
+        $review= $data->review;
+        $msg = "";
+        
+        if(strlen($review)){
+            $values = array('full_name' => $userName,'review_comment' => $review);
+            $insert = DB::table('bsd_reviews')->insert($values);
+            
+            if($insert){
+                $status = "ok";
+            }
+            else{
+                $status = "failed";
+                $msg = "Something went wrong, please try again";           
+            }
+        }
+        else{
+            $status = "failed";
+            $msg = "Review Should not be over 250 characters!";               
+        }
+    
+        $arr = array('a' => $status, 'b' => $msg);
 
+        echo json_encode($arr);
+    }
 
 
     

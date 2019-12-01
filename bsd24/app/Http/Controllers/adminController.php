@@ -209,4 +209,11 @@ class adminController extends Controller
         }
     }
 
+    /*Contact Us Handling*/
+    public function admin_contact_us()
+    {
+        $contact_reqs = DB::table('bsd_contact_uses')->orderBy('id', 'DESC')->get();
+        return view('bsd24_admin/html/admin_contact_us')->with('contact_reqs',$contact_reqs);
+    }
+
 }
