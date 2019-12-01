@@ -144,7 +144,7 @@ class bsd24_mainController extends Controller
         $review= $data->review;
         $msg = "";
         
-        if(strlen($review)){
+        if(strlen($review)<=250){
             $values = array('full_name' => $userName,'review_comment' => $review);
             $insert = DB::table('bsd_reviews')->insert($values);
             
@@ -183,15 +183,16 @@ class bsd24_mainController extends Controller
         
     }
 
-    
+
     public function contact_request(request $data){
         $userName= $data->userName;
-        $review= $data->review;
+        $userEmail= $data->userEmail;
+        $subject= $data->subject;
+        $message= $data->message;
         $msg = "";
-        
-        if(strlen($review)){
-            $values = array('full_name' => $userName,'review_comment' => $review);
-            $insert = DB::table('bsd_reviews')->insert($values);
+        if(strlen($message)<=550){
+            $values = array('full_name' => $userName,'user_email' => $userEmail,'subject' => $subject, 'message' => $message, 'created_at'=> NOW());
+            $insert = DB::table('bsd_contact_uses')->insert($values);
             
             if($insert){
                 $status = "ok";
@@ -203,7 +204,7 @@ class bsd24_mainController extends Controller
         }
         else{
             $status = "failed";
-            $msg = "Review Should not be over 250 characters!";               
+            $msg = "Message Should not be over 550 characters!";               
         }
     
         $arr = array('a' => $status, 'b' => $msg);
