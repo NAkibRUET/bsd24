@@ -34,8 +34,41 @@ class bsd24_mainController extends Controller
     }
     function exchange_operation_view()
     {
+        if(session('exchange_info.user_receive_value','')=='')
+        {
+            return redirect('/');
+        }
+        else{
         return view('bsd24_exchange_operation');
+        }
+
     }
+
+    function bsd24_exchange_final_stage()
+    {
+        if(session('exchange_info.user_receive_value','')=='')
+        {
+            return redirect('/');
+        }
+        else{
+            return view('bsd24_exchange_final_stage');
+        }
+        
+    }
+
+    function exchange_operation_view_post(request $data)
+    {
+        $conversion_from = $data->conversion_from;
+        $conversion_to = $data->conversion_to;
+        $user_send_value = $data->user_send_value;
+        $user_receive_value = $data->user_receive_value;
+        $user_operator_no = $data->user_operator_no;
+        $exchange_info = array('conversion_from'=>$conversion_from, 'conversion_to'=>$conversion_to, 'user_send_value'=>$user_send_value,'user_receive_value'=>$user_receive_value,'user_operator_no'=>$user_operator_no);
+        session(['exchange_info'=>$exchange_info]);
+        return redirect('/exchange_operation_view');
+    }
+
+
     public function sign_up_request(request $data)
     {
         $fullName= $data->fullName; 
@@ -70,6 +103,9 @@ class bsd24_mainController extends Controller
 
         echo json_encode($arr);
     }
+
+
+
     public function login_request(request $data){
         $userEmail= $data->userEmail;
         $password= $data->password;
@@ -88,6 +124,7 @@ class bsd24_mainController extends Controller
                 $mobile = DB::table('bsd_user_informations')->where('user_email',$userEmail)->value('user_phone');
                 $data = array('name' => $name, 'email' => $email, 'mobile' => $mobile);
                 session(['user_info'=>$data]);
+                
 
             }
             else{
@@ -100,6 +137,8 @@ class bsd24_mainController extends Controller
 
         echo json_encode($arr);
     }
+
+
     public function reviews_submit(request $data){
         $userName= $data->userName;
         $review= $data->review;
@@ -126,5 +165,26 @@ class bsd24_mainController extends Controller
 
         echo json_encode($arr);
     }
+
+
+    public function login_check_user()
+    {
+       
+        $check = session('user_info.email','none');
+        //echo $check;
+        if($check=="none")
+        {
+            return "Please Login First...";
+        }
+        else
+        {
+            return "1";
+        }
+        
+    }
+
+
+
+
     
 }

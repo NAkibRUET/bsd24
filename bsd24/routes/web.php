@@ -22,11 +22,14 @@ Route::post("/login", "bsd24_mainController@login_request");
 Route::get('/sign_up', "bsd24_mainController@sign_up");
 Route::post('/sign_up/request', "bsd24_mainController@sign_up_request");
 Route::get('/exchange_operation_view', "bsd24_mainController@exchange_operation_view");
+Route::post('/exchange_operation_view', "bsd24_mainController@exchange_operation_view_post");
 Route::get('/contact_us', "bsd24_mainController@contact_us");
 Route::get('/reviews', "bsd24_mainController@reviews");
 Route::post('/review', "bsd24_mainController@reviews_submit");
 Route::get('/user_profile', "bsd24_mainController@profile")->middleware('user_persmission');
 route::get('/bsd24_admin/private/login','bsd24_mainController@login');
+route::get('/login_check_user', 'bsd24_mainController@login_check_user');
+route::get('/bsd24_exchange_final_stage','bsd24_mainController@bsd24_exchange_final_stage');
 
 
 
