@@ -14,76 +14,80 @@
 	<div class="section container" style="">
   		<div class="row">
   			<div class="col-lg-9">
-  				<div class="box100">
-  					<div class="row">
-  						<div class="col-sm-6">
-  							<div class="row">
-	  							<div class="col-md-3 imgDivExchange">
-	  								<br>
-	  								<br>
-	  								<img src="{{ URL::asset ('bsd24_assets/bkash_agent.png') }}" id="imgSend" width="80px"
-									class="rounded-circle img-thumbnail imgExchange">	
-	  							</div>
-	  							<div class="col-md-9">
-	  								<h4 class="boxHeader"><i class="fa fa-arrow-up"></i> Send</h4>
-	  								<select id="moneySend" class="form-control" onchange="funcSend(this.value)">
-										  <option value="neteller">Neteller USD</option>
-										  <option value="paypal">Paypal USD</option>
-										  <option value="payoneer">Payoneer USD</option>
-										  <option value="pm">PM USD</option>
-										  <option value="coinbase">Coinebase USD</option>
-										  <option value="webmoney">WebMoney USD</option>
-										  <option value="city">City Bank USD</option>
-										  <option value="bkashA" selected>BKash Agent</option>
-										  <option value="rocketA">Rocket Agent</option>
-										  <option value="nagad">Nagad Agent</option>
-										  <option value="skrill">Skrill USD</option>
-										  <option value="dbbl">DBBL BDT</option>
-	  								</select>	
-	  								<br>
-	  								<input type="text" id="sendVal" class="form-control" name="">	
-	  								<br>
-	  								<h6 class="exRate" id="exchangeRate" style="text-align: right;">Buy-Sell rate: 1 USD = 85 BDT</h6>
-	  								<br>
-	  							</div>
-  							</div>
-  						</div>
-  						<div class="col-sm-6">
-  							<div class="row">
-	  							<div class="col-md-9">
-	  								<h4 class="boxHeader"><i class="fa fa-arrow-down"></i> Receive</h4>
-	  								<select id="moneyReceive" class="form-control" onchange="funcReceive(this.value)">
-										  <option value="neteller">Neteller USD</option>
-										  <option value="paypal">Paypal USD</option>
-										  <option value="payoneer">Payoneer USD</option>
-										  <option value="pm">PM USD</option>
-										  <option value="coinbase">Coinebase USD</option>
-										  <option value="webmoney">WebMoney USD</option>
-										  <option value="city">City Bank USD</option>
-										  <option value="bkashP">BKash Personal</option>
-										  <option value="rocketP">Rocket Personal</option>
-										  <option value="nagad">Nagad Agent</option>
-										  <option value="skrill">Skrill USD</option>
-										  <option value="dbbl">DBBL BDT</option>
-	  								</select>	
-	  								<br>
-	  								<input type="text" id="receiveVal" class="form-control" name="" disabled>	
-	  								<br>
-	  								<h6 class="exRate" id="reserveAmount">Reserve: 65439.5 BDT</h6>	
-	  								<br>
-	  							</div>
-	  							<div class="col-md-3 imgDivExchange">
-	  								<br>
-	  								<br>
-	  								<img src="{{ URL::asset ('bsd24_assets/neteller.png') }}" id="imgReceive" width="80px"
-									class="rounded-circle img-thumbnail imgExchange">	
-	  							</div>
-  							</div>
-  						</div>
-  					</div>
-  					
-  					<button class="btn btn-primary w-100" type="button">Exchange</button>
-				</div>
+					<form method="post" action="{{URL::to('/exchange_operation_view')}}">
+						<div class="box100">
+							<div class="row">
+									<input type="hidden" id="login_token" name="_token" value="{{csrf_token()}}">
+								<div class="col-sm-6">
+									<div class="row">
+										<div class="col-md-3 imgDivExchange">
+											<br>
+											<br>
+											<img src="{{ URL::asset ('bsd24_assets/bkash_agent.png') }}" id="imgSend" width="80px"
+											class="rounded-circle img-thumbnail imgExchange">	
+										</div>
+										<div class="col-md-9">
+											<h4 class="boxHeader"><i class="fa fa-arrow-up"></i> Send</h4>
+											<select name="conversion_from" id="moneySend" class="form-control" onchange="funcSend(this.value)">
+												<option value="Bkash Agent BDT" >BKash Agent BDT</option>
+												<option value="Neteller USD">Neteller USD</option>
+												<option value="WebMoney USD">WebMoney USD</option>
+												<option value="Rocket Agent BDT">Rocket Agent BDT</option>
+												<option value="Nagad Agent BDT">Nagad Agent BDT</option>
+												<option value="Skrill USD">Skrill USD</option>
+												
+											</select>	
+											<br>
+											<input type="text" id="user_sendVal" value="1" onkeyup="exchange_operation()" class="form-control" name="user_send_value">	
+											<br>
+											<h6 class="exRate" id="exchangeRate" style="text-align: right;">Buy-Sell rate: 1 USD = 85 BDT</h6>
+											<br>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="row">
+										<div class="col-md-9">
+											<h4 class="boxHeader"><i class="fa fa-arrow-down"></i> Receive</h4>
+											<select name="conversion_to" id="moneyReceive" class="form-control" onchange="funcReceive(this.value)">
+													<option value="Neteller USD">Neteller USD</option>
+													<option value="WebMoney USD">WebMoney USD</option>
+													<option value="Bkash Agent BDT">BKash Agent BDT</option>
+													<option value="Rocket Agent BDT">Rocket Agent BDT</option>
+													<option value="Nagad Agent BDT">Nagad Agent BDT</option>
+													<option value="Skrill USD">Skrill USD</option>
+													
+											</select>	
+											<br>
+											<input type="text" id="user_receiveVal" class="form-control" name="user_receive_value" readonly>	
+											<br>
+											<h6 class="exRate" id="reserveAmount">Reserve: 65439.5 BDT</h6>	
+											<br>
+										</div>
+										<div class="col-md-3 imgDivExchange">
+											<br>
+											<br>
+											<img src="{{ URL::asset ('bsd24_assets/neteller.png') }}" id="imgReceive" width="80px"
+											class="rounded-circle img-thumbnail imgExchange">	
+										</div>
+									</div>
+								</div>
+								
+							</div>
+							
+							<div class="" id="operator_credential" style="background:#d1d8e0;padding:15px; border:1px solid #4b6584;border-radius:5px;display:none;">
+								<h6 id="credential_message"></h6>
+								<hr style="">
+								<input required  class="form-control" style="width:60%;padding:10px;" name="user_operator_no">
+							</div>
+							<br>
+							<h5 style="color:red;" id="user_login_req"></h5>
+							<button id="exchange_command" class="btn btn-primary w-100" type="button">Exchange</button>
+							<input type="submit" style="display:none;" id="exchange_command2" class="btn-n btn-lg btn-primary" value="Go for Exchange">
+						</div>
+
+
+				</form>
 
 				
 				<div class="box2nd95">
@@ -366,37 +370,128 @@
 	<!--Please, place all your div/box/anything inside the above SECTION-->
 
 	<script type="text/javascript">
-		var sendType = "bkashA";
-		var receiveType = "neteller";
+
+
+		$(document).ready(function(){
+			$('#exchange_command').click(function(event){
+				$.ajax({
+					method: "GET",
+					url : '/login_check_user',
+					data :{
+						_token: $('#login_token').val()
+
+					},
+					success: function(response){
+						console.log(response);
+						if(response!=1)
+						{
+							document.getElementById('user_login_req').innerHTML = response;
+						}
+						else
+						{
+							var card_or_phone = document.getElementById('moneyReceive').value;
+
+							document.getElementById('credential_message').innerHTML = "Enter Your " + card_or_phone+ " Number";
+							document.getElementById('operator_credential').style.display="block";
+							document.getElementById('exchange_command').style.display = 'none';
+							document.getElementById('exchange_command2').style.display = 'block';
+
+
+						}
+					}
+
+                
+            });
+
+		});
+	});
+
+
+
+
+
+
+
+
+
+		function do_core_operation(factor)
+		{
+			ffactor = parseFloat(factor);
+			send_value = document.getElementById('user_sendVal').value;
+			$result = ffactor*parseFloat(send_value);
+			//console.log($result);
+			document.getElementById('user_receiveVal').value= $result;
+		}
+
+		function server_communication(moneySend, moneyReceive)
+		{
+
+            $.ajax({
+                method: "GET",
+                url : '/currency_equivalent/currency_check',
+                data :{
+                    conversion_from : moneySend,
+                    conversion_to : moneyReceive,
+                    _token: $('#login_token').val()
+
+                },
+                success: function(response){
+                    if(response!=0)
+                    {
+                        do_core_operation(response);
+                    }
+                    else{
+                        console.log(response);
+                    }
+                }
+
+                
+            });
+		}
+
+		function exchange_operation()
+		{
+			var moneySend = $('#moneySend').val();
+            var moneyReceive = $('#moneyReceive').val();
+			server_communication(moneySend, moneyReceive);
+			console.log("I am calling");
+		}
+
+
+
+
+
+		var sendType = "Bkash Agent BDT";
+		var receiveType = "Neteller USD";
 		function funcSend(val) {
 			var value = val;
 			sendType = value;
 			console.log(value);
-			if(value === "nagad"){
+			if(value === "Nagad Agent BDT"){
 				document.getElementById('imgSend').src = "{{ URL::asset ('bsd24_assets/nagad.jpg') }}";
 			}
-			else if(value === "bkashP"){
+			else if(value === "Bkash Personal BDT"){
 				document.getElementById('imgSend').src = "{{ URL::asset ('bsd24_assets/bkash.png') }}";	
 			}
-			else if(value === "bkashA"){
+			else if(value === "Bkash Agent BDT"){
 				document.getElementById('imgSend').src = "{{ URL::asset ('bsd24_assets/bkash_agent.png') }}";
 			}
-			else if(value === "rocketA"){
+			else if(value === "Rocket Agent BDT"){
 				document.getElementById('imgSend').src = "{{ URL::asset ('bsd24_assets/rocket_agent.jpg') }}";	
 			}
-			else if(value === "rocketP"){
+			else if(value === "Rocket Personal BDT"){
 				document.getElementById('imgSend').src = "{{ URL::asset ('bsd24_assets/rocket.png') }}";	
 			}
-			else if(value === "skrill"){
+			else if(value === "Skrill USD"){
 				document.getElementById('imgSend').src = "{{ URL::asset ('bsd24_assets/skrill.png') }}";	
 			}
 			else if(value === "pm"){
 				document.getElementById('imgSend').src = "{{ URL::asset ('bsd24_assets/pm.png') }}";
 			}
-			else if(value === "neteller"){
+			else if(value === "Neteller USD"){
 				document.getElementById('imgSend').src = "{{ URL::asset ('bsd24_assets/neteller.png') }}";
 			}
-			else if(value === "webmoney"){
+			else if(value === "WebMoney USD"){
 				document.getElementById('imgSend').src = "{{ URL::asset ('bsd24_assets/webmoney.png') }}";	
 			}
 			else if(value === "coinbase"){
@@ -414,37 +509,40 @@
 			else if(value === "paypal"){
 				document.getElementById('imgSend').src = "{{ URL::asset ('bsd24_assets/paypal.jpg') }}";	
 			}
+
+			exchange_operation();
 		}
 
 		function funcReceive(val) {
+			
 			var value = val;
 			receiveType = value;
 			console.log(value);
-			if(value === "nagad"){
+			if(value === "Nagad Agent BDT"){
 				document.getElementById('imgReceive').src = "{{ URL::asset ('bsd24_assets/nagad.jpg') }}";
 			}
-			else if(value === "bkashP"){
+			else if(value === "Bkash Personal BDT"){
 				document.getElementById('imgReceive').src = "{{ URL::asset ('bsd24_assets/bkash.png') }}";	
 			}
-			else if(value === "bkashA"){
+			else if(value === "Bkash Agent BDT"){
 				document.getElementById('imgReceive').src = "{{ URL::asset ('bsd24_assets/bkash_agent.png') }}";	
 			}
-			else if(value === "rocketA"){
+			else if(value === "Rocket Agent BDT"){
 				document.getElementById('imgReceive').src = "{{ URL::asset ('bsd24_assets/rocket_agent.jpg') }}";	
 			}
-			else if(value === "rocketP"){
+			else if(value === "Rocket Personal BDT"){
 				document.getElementById('imgReceive').src = "{{ URL::asset ('bsd24_assets/rocket.png') }}";	
 			}
-			else if(value === "skrill"){
+			else if(value === "Skrill USD"){
 				document.getElementById('imgReceive').src = "{{ URL::asset ('bsd24_assets/skrill.png') }}";	
 			}
 			else if(value === "pm"){
 				document.getElementById('imgReceive').src = "{{ URL::asset ('bsd24_assets/pm.png') }}";	
 			}
-			else if(value === "neteller"){
+			else if(value === "Neteller USD"){
 				document.getElementById('imgReceive').src = "{{ URL::asset ('bsd24_assets/neteller.png') }}";	
 			}
-			else if(value === "webmoney"){
+			else if(value === "WebMoney USD"){
 				document.getElementById('imgReceive').src = "{{ URL::asset ('bsd24_assets/webmoney.png') }}";	
 			}
 			else if(value === "coinbase"){
@@ -462,19 +560,21 @@
 			else if(value === "paypal"){
 				document.getElementById('imgReceive').src = "{{ URL::asset ('bsd24_assets/paypal.jpg') }}";	
 			}
+
+			exchange_operation();
 		}
 
 		/* */
 
-		if(sendType === "bkashA" && receiveType === "neteller"){
+		if(sendType === "Bkash Agent BDT" && receiveType === "Neteller USD"){
 			var sendRate = 96;
 			var receiveRate = 1;
 			var sendCurrencyType = " BDT";
 			var receiveCurrencyType = " USD";
 			var reserveAmount = 13644;
 			var reserveCurrencyType = " USD";
-			document.getElementById('sendVal').value = sendRate;
-			document.getElementById('receiveVal').value = receiveRate;
+			//document.getElementById('sendVal').value = sendRate;
+			//document.getElementById('receiveVal').value = receiveRate;
 
 			document.getElementById('exchangeRate').innerHTML = "Buy-Sell rate: "+ sendRate + sendCurrencyType +" = " + receiveRate + receiveCurrencyType;
 			document.getElementById('reserveAmount').innerHTML = reserveAmount+" "+reserveCurrencyType;			
