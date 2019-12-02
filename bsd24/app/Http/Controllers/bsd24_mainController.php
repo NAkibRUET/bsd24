@@ -165,7 +165,7 @@ class bsd24_mainController extends Controller
         $review= $data->review;
         $msg = "";
         
-        if(strlen($review)){
+        if(strlen($review)<=250){
             $values = array('full_name' => $userName,'review_comment' => $review);
             $insert = DB::table('bsd_reviews')->insert($values);
             
@@ -205,6 +205,35 @@ class bsd24_mainController extends Controller
     }
 
 
+
+    public function contact_request(request $data){
+        $userName= $data->userName;
+        $userEmail= $data->userEmail;
+        $subject= $data->subject;
+        $message= $data->message;
+        $msg = "";
+        if(strlen($message)<=550){
+            $values = array('full_name' => $userName,'user_email' => $userEmail,'subject' => $subject, 'message' => $message, 'created_at'=> NOW());
+            $insert = DB::table('bsd_contact_uses')->insert($values);
+            
+            if($insert){
+                $status = "ok";
+            }
+            else{
+                $status = "failed";
+                $msg = "Something went wrong, please try again";           
+            }
+        }
+        else{
+            $status = "failed";
+            $msg = "Message Should not be over 550 characters!";               
+        }
+    
+        $arr = array('a' => $status, 'b' => $msg);
+
+        echo json_encode($arr);
+    }
+
     public function bsd24_exchange_final_last(request $data)
     {
         $bsd24_exchange_id= $data->bsd24_exchange_id;
@@ -235,7 +264,6 @@ class bsd24_mainController extends Controller
         $single_value = DB::table('exchange_all_record_privates')->orderBy('id','DESC')->value('created_at');
         return $single_value;
     }
-
 
 
 }
