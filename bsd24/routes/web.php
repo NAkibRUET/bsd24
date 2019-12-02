@@ -48,7 +48,13 @@ route::post('/add_a_new_reserve/{id}', 'adminController@add_a_new_reserve_stor_u
 route::get('/reserve_update/{id}', 'adminController@reserve_update')->middleware('admin_permission');
 route::get('/delete_reserve/{id}', 'adminController@delete_a_reserve')->middleware('admin_permission');
 
+
 route::get('/exchange_operation', 'adminController@exchange_operation')->middleware('admin_permission');
+route::get('/exchange_command/process/{bsd24_transaction_id}', 'adminController@execute_process');
+route::get('/exchange_command/complete/{bsd24_transaction_id}', 'adminController@execute_completed');
+route::get('/exchange_command/delete/{bsd24_transaction_id}', 'adminController@execute_delete');
+
+
 route::get('/send_receive_info', 'adminController@send_receive_info')->middleware('admin_permission');
 route::post('/send_receive_info', 'adminController@send_receive_info_post')->middleware('admin_permission');
 route::post('send_receive_info/{id}', 'adminController@send_receive_info_post_update')->middleware('admin_permission');
