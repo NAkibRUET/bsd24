@@ -269,4 +269,12 @@ class bsd24_mainController extends Controller
     
 
 
+    function other_user_profile($email)
+    {   
+        
+        $user_data = DB::table('bsd_user_informations')->where('user_email', $email)->get();
+        return view('bsd24_other_user_profile')->with('user_data', $user_data);
+        
+    }
+
 }
