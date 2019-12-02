@@ -30,6 +30,9 @@ Route::get('/user_profile', "bsd24_mainController@profile")->middleware('user_pe
 route::get('/bsd24_admin/private/login','bsd24_mainController@login');
 route::get('/login_check_user', 'bsd24_mainController@login_check_user');
 route::get('/bsd24_exchange_final_stage','bsd24_mainController@bsd24_exchange_final_stage');
+route::post('/bsd24_exchange_final_stage','bsd24_mainController@bsd24_exchange_final_last');
+route::get('/thank_you','bsd24_mainController@thank_you');
+route::get('/only_test','bsd24_mainController@only_test');
 
 
 
@@ -58,4 +61,8 @@ route::get('/currency_equivalent/currency_check','adminController@currency_check
 route::get('/admin_review/{id}', 'adminController@show_accept_review')->middleware('admin_permission');
 route::get('/admin_review', 'adminController@admin_review')->middleware('admin_permission');
 route::get('/admin_review/update/{id}', 'adminController@update_review')->middleware('admin_permission');
+
+
+
+route::get('/id_test','bsd24_mainController@adil_test');
 
