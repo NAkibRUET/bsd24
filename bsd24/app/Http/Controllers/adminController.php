@@ -13,7 +13,8 @@ class adminController extends Controller
     }
     public function exchange_operation()
     {
-        return view('bsd24_admin/html/admin_exchange_operation');
+        $all_exchange = DB::table('exchange_all_record_privates')->orderBy('id','DESC')->get();
+        return view('bsd24_admin/html/admin_exchange_operation')->with('exchange_records',$all_exchange);
     }
     public function send_receive_info()
     {
@@ -215,5 +216,29 @@ class adminController extends Controller
         $contact_reqs = DB::table('bsd_contact_uses')->orderBy('id', 'DESC')->get();
         return view('bsd24_admin/html/admin_contact_us')->with('contact_reqs',$contact_reqs);
     }
+
+
+
+    /*exchange_operation*/
+
+    public function execute_process($bsd24_transaction_id)
+    {
+        DB::table('exchange_trackers')->where('bsd24_exchange_id', $bsd24_transaction_id)->update(['status'=>"Processing"]);
+        DB::table('exchange_all_record_privates')->where('exchange_tracking_id',$bsd24_transaction_id)->update(['status'=>"processing"]);
+        return back();
+    }
+    public function execute_completed($bsd24_transaction_id)
+    {
+        DB::table('exchange_trackers')->where('bsd24_exchange_id', $bsd24_transaction_id)->update(['status'=>"Completed"]);
+        DB::table('exchange_all_record_privates')->where('exchange_tracking_id',$bsd24_transaction_id)->update(['status'=>"completed"]);
+        return back();
+    }
+    public function execute_delete($bsd24_transaction_id)
+    {
+        DB::table('exchange_trackers')->where('bsd24_exchange_id', $bsd24_transaction_id)->update(['status'=>"Suspended"]);
+        DB::table('exchange_all_record_privates')->where('exchange_tracking_id',$bsd24_transaction_id)->delate();
+        return back();
+    }
+
 
 }

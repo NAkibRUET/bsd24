@@ -44,46 +44,44 @@
                           <th scope="col">Receive</th>
                           <th scope="col">From</th>
                           <th scope="col">To</th>
+                          <th scope="col">Transaction</th>
+                          <th scope="col">Exchange_id</th>
+                          <th scope="col">user</th>
                           <th scope="col">Action</th>
                           <th scope="col">Status</th>
+                         
                         </tr>
                       </thead>
+
                       <tbody>
+                        <?php $count=1;?>
+
+                        @foreach ($exchange_records as $record)
+                        
                         <tr>
-                          <th scope="row" class="hiddenElem2">1</th>
-                          <td>BKash Agent</td>
-                          <td>Nagad</td>
-                          <td>5000 BDT</td>
-                          <td>5000 USD</td>
+                        <th scope="row" class="hiddenElem2">{{$count++}}</th>
+                          <td>{{$record->sending}}</td>
+                          <td>{{$record->receiving}}</td>
+                          <td>{{$record->from_amount}}</td>
+                          <td>{{$record->to_amount}}</td>
+                          <td>{{$record->transaction}}</td>
+                          <td>{{$record->exchange_tracking_id}}</td>
+                          <td><a href="/">GO & See</a></td>
                           <td>
                             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
                             <div class="dropdown-menu">
-                              <a class="dropdown-item" href="#"><button type="button" id="ProcesssingId" class="btn btn-warning">Processsing</button></a>
-                              <a class="dropdown-item" href="#"><button type="button" id="CompletedId" class="btn btn-success">Completed</button></a>
-                              <a class="dropdown-item" href="#"><button type="button" id="DeleteId" class="btn btn-danger">Delete</button></a>
+                            <a class="dropdown-item" href="{{URL::to('/exchange_command/process/'.$record->exchange_tracking_id)}}"><button type="button" id="ProcesssingId" class="btn btn-warning">Processsing</button></a>
+                              <a class="dropdown-item" href="{{URL::to('/exchange_command/complete/'.$record->exchange_tracking_id)}}"><button type="button" id="CompletedId" class="btn btn-success">Completed</button></a>
+                              <a class="dropdown-item" href="{{URL::to('/exchange_command/delete/'.$record->exchange_tracking_id)}}"><button type="button" id="DeleteId" class="btn btn-danger">delete</button></a>
                             </div>
                           </td>
-                          <td>Processing</td>
+                          <td>{{$record->status}}</td>
                           <!--When the button Processing is pressed it will show "Processing" in Status
                             when completed is pressed it will show "Completed" in status. (as it will show in the homepage in frontend)-->  
                         </tr>
-                        <tr>
-                          <th scope="row" class="hiddenElem2">1</th>
-                          <td>BKash Agent</td>
-                          <td>Nagad</td>
-                          <td>5000 BDT</td>
-                          <td>5000 USD</td>
-                          <td>
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="#"><button type="button" id="ProcesssingId" class="btn btn-warning">Processsing</button></a>
-                              <a class="dropdown-item" href="#"><button type="button" id="CompletedId" class="btn btn-success">Completed</button></a>
-                              <a class="dropdown-item" href="#"><button type="button" id="DeleteId" class="btn btn-danger">Delete</button></a>
-                            </div>
-                          </td>
-                          <td>Processing</td>
 
-                        </tr>
+                        @endforeach
+                       
                         
                       </tbody>
                     </table>

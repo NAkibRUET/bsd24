@@ -22,6 +22,7 @@ class CreateExchangeAllRecordPrivatesTable extends Migration
             $table->string('to_amount');
             $table->string('transaction');
             $table->string('user_email');
+            $table->string('status')->default("Admin checking for proper transactions");
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             

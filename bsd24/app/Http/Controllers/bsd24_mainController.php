@@ -244,6 +244,8 @@ class bsd24_mainController extends Controller
         $make_array = array('exchange_tracking_id'=>session('exchange_info.bsd24_exchange_id'),'sending'=>session('exchange_info.conversion_from'), 'receiving'=>session('exchange_info.conversion_to'),'from_amount'=>session('exchange_info.user_send_value'), 'to_amount'=>session('exchange_info.user_receive_value'), 'transaction'=>session('exchange_info.transaction_id'),'user_email'=>session('user_info.email'));
 
         DB::table('exchange_all_record_privates')->insert($make_array);
+        $make_array2 = array('bsd24_exchange_id'=>session('exchange_info.bsd24_exchange_id'), 'status'=>"verifying your transaction");
+        DB::table('exchange_trackers')->insert($make_array2);
         return redirect('/thank_you');
     }
 
@@ -264,6 +266,7 @@ class bsd24_mainController extends Controller
         $single_value = DB::table('exchange_all_record_privates')->orderBy('id','DESC')->value('created_at');
         return $single_value;
     }
+    
 
 
 }
