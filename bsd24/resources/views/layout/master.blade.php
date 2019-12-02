@@ -61,8 +61,9 @@
 	        <marquee behavior="scroll" direction="left" 
 	          onmouseover="this.stop();" 
 	          onmouseout="this.start();" style="margin-bottom: -4px; color:#fff;">
-	            <a><i class="fa fa-angle-double-right" ></i> কোন লেনদেনের ক্ষেত্রে ১০ মিনিট এর বেশি সময় অতিবাহিত হলে এসএমএস অথবা ফোন করুন।</a>
-	            <a><i class="fa fa-angle-double-right" ></i> NETELLER ও Skrill ৩০$ এর কম কেনার ক্ষেত্রে Transfer fee সহ টাকা পাঠানোর জন্য অনুরোধ করা হলো।</a>
+	          	@foreach ($headline as $data)
+                	<a> <i class="fa fa-angle-double-right"> {{$data->headline_text}}</i></a>   
+	            @endforeach
 	        </marquee> 
 	      </div>
 	    

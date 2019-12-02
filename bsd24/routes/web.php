@@ -74,4 +74,11 @@ route::get('/admin_contact_us', 'adminController@admin_contact_us')->middleware(
 
 route::get('/id_test','bsd24_mainController@adil_test');
 
+route::get('/headline', 'adminController@headline')->middleware('admin_permission');
+route::post('/headline', 'adminController@headline_insert')->middleware('admin_permission');
+route::get('/headline_update/{id}', 'adminController@headline_update_show')->middleware('admin_permission');
+route::post('/headline/update', 'adminController@headline_update')->middleware('admin_permission');
+route::get('/headline_delete/{id}', 'adminController@headline_delete_show')->middleware('admin_permission');
+route::get('/headline/delete/{id}', 'adminController@headline_delete')->middleware('admin_permission');
+
 
