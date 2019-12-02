@@ -4,8 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Dirape\Token\Token;
+
+
 class bsd24_mainController extends Controller
 {
+
+
+    public function generate_exchange_id()
+    {
+        $randomString = md5(rand(3,100) . microtime());
+        $Orginal_track_id = strtoupper($randomString);
+        $Orginal_track_id = substr(str_shuffle($Orginal_track_id), 0, 16);
+        return $Orginal_track_id;
+    }
+
+
+
+
     function bsd24_home_page()
     {
         $review = DB::table('bsd_reviews')->where('status','1')->orderBy('id', 'DESC')->take(10)->get();
@@ -39,6 +55,7 @@ class bsd24_mainController extends Controller
             return redirect('/');
         }
         else{
+            $tid = $this->adil_test();
         return view('bsd24_exchange_operation');
         }
 
@@ -51,7 +68,10 @@ class bsd24_mainController extends Controller
             return redirect('/');
         }
         else{
-            return view('bsd24_exchange_final_stage');
+            
+            $money_receiving_credentials = DB::table('send_receive_infos')->where('send_or_receive','send')->where('operator_name',session('exchange_info.conversion_from'))->value('card_or_phone');
+
+            return view('bsd24_exchange_final_stage')->with(['money_receiving_credentials'=>$money_receiving_credentials,'bsd24_exchange_id'=>$this->adil_test()]);
         }
         
     }
@@ -65,7 +85,8 @@ class bsd24_mainController extends Controller
         $user_operator_no = $data->user_operator_no;
         $exchange_info = array('conversion_from'=>$conversion_from, 'conversion_to'=>$conversion_to, 'user_send_value'=>$user_send_value,'user_receive_value'=>$user_receive_value,'user_operator_no'=>$user_operator_no);
         session(['exchange_info'=>$exchange_info]);
-        return redirect('/exchange_operation_view');
+        return view('bsd24_exchange_operation')->with('bsd24_exchange_id',$this->generate_exchange_id());
+
     }
 
 
@@ -184,6 +205,7 @@ class bsd24_mainController extends Controller
     }
 
 
+
     public function contact_request(request $data){
         $userName= $data->userName;
         $userEmail= $data->userEmail;
@@ -212,6 +234,36 @@ class bsd24_mainController extends Controller
         echo json_encode($arr);
     }
 
+    public function bsd24_exchange_final_last(request $data)
+    {
+        $bsd24_exchange_id= $data->bsd24_exchange_id;
+        $transaction_id = $data->transaction_id;
+        session(['exchange_info.transaction_id'=>$transaction_id]);
+        session(['exchange_info.bsd24_exchange_id'=>$bsd24_exchange_id]);
 
-    
+        $make_array = array('exchange_tracking_id'=>session('exchange_info.bsd24_exchange_id'),'sending'=>session('exchange_info.conversion_from'), 'receiving'=>session('exchange_info.conversion_to'),'from_amount'=>session('exchange_info.user_send_value'), 'to_amount'=>session('exchange_info.user_receive_value'), 'transaction'=>session('exchange_info.transaction_id'),'user_email'=>session('user_info.email'));
+
+        DB::table('exchange_all_record_privates')->insert($make_array);
+        return redirect('/thank_you');
+    }
+
+    public function thank_you()
+    {
+        return view('thank_you');
+    }
+
+    public function adil_test()
+    {
+        $randomString = md5(rand(3,100) . microtime());
+        $Orginal_track_id = strtoupper($randomString);
+        $Orginal_track_id = substr(str_shuffle($Orginal_track_id), 0, 16);
+        return $Orginal_track_id;
+    }
+    public function only_test()
+    {
+        $single_value = DB::table('exchange_all_record_privates')->orderBy('id','DESC')->value('created_at');
+        return $single_value;
+    }
+
+
 }
