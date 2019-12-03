@@ -241,4 +241,79 @@ class adminController extends Controller
     }
 
 
+     /*Headline Handling*/
+    public function headline()
+    {
+        $headline = DB::table('headline_tables')->orderBy('id', 'DESC')->get();
+        return view('bsd24_admin/html/admin_headline')->with('headline',$headline);
+    }
+    public function headline_insert(request $data)
+    {
+        $headline= $data->hText;
+        
+        $msg = "";
+        
+        if(strlen($headline)>0){
+            $values = array('headline_text' => $headline);
+            $insert = DB::table('headline_tables')->insert($values);
+            
+            if($insert){
+                $status = "ok";
+            }
+            else{
+                $status = "failed";
+                $msg = "Something went wrong, please try again";           
+            }
+        }
+        else{
+            $status = "failed";
+            $msg = "Headline Should not be empty";               
+        }
+    
+        $arr = array('a' => $status, 'b' => $msg);
+
+        echo json_encode($arr);
+        
+    }
+    public function headline_update_show($id)
+    {   
+        $headline = DB::table('headline_tables')->where('id', $id)->get();
+        return view('bsd24_admin/html/admin_headline_update')->with('headline',$headline);
+    }
+    public function headline_update(request $data)
+    {   
+        $id = $data->TextId;
+        $hText = $data->hText;
+        $check = DB::table('headline_tables')->where('id',$id)->update(['headline_text'=>$hText]);
+        $msg ="";
+        if($check){
+            $status = "ok";
+        }
+        else{
+            $status = "failed";
+            $msg = "Something went wrong, please try again";           
+        }
+        
+        $arr = array('a' => $status, 'b' => $msg);
+
+        echo json_encode($arr);
+    }
+    public function headline_delete_show($id)
+    {   
+       $headline = DB::table('headline_tables')->where('id', $id)->get();
+        return view('bsd24_admin/html/admin_headline_delete')->with('headline',$headline);
+    }
+    public function headline_delete($id)
+    {   
+        $check = DB::table('headline_tables')->where('id',$id)->delete();
+        if($check)
+        {
+            $status = "ok";
+            return redirect('/headline');
+        }
+        else{
+            return 'failed';
+        }
+    }
+
 }
