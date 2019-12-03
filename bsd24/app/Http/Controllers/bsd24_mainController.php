@@ -25,8 +25,9 @@ class bsd24_mainController extends Controller
     function bsd24_home_page()
     {
         $review = DB::table('bsd_reviews')->where('status','1')->orderBy('id', 'DESC')->take(10)->get();
-        $headline = DB::table('headline_tables')->orderBy('id', 'ASC')->get();
-        return view('main_home_page')->with('review',$review)->with('headline',$headline);
+        $headline = DB::table('headline_tables')->orderBy('id', 'ASC')->first();
+        session(['headline_text'=>$headline->headline_text]);
+        return view('main_home_page')->with('review',$review);
     }
     function login()
     {
@@ -188,6 +189,17 @@ class bsd24_mainController extends Controller
         echo json_encode($arr);
     }
 
+    public function eligibility_check()
+    {
+        $time = DB::table('user_last_exchange_times')->where('user_email',session('user_info.email'))->orderBy('id', 'DESC')->value('last_exchange_time');
+        $to_time = strtotime($time);
+        $from_time = strtotime(NOW());
+        $tenu = round(abs($to_time - $from_time)/60);
+        $wating_minutes = 10 - (int)$tenu;
+        return $wating_minutes;
+
+    }
+
 
     public function login_check_user()
     {
@@ -196,11 +208,15 @@ class bsd24_mainController extends Controller
         //echo $check;
         if($check=="none")
         {
-            return "Please Login First...";
+            return "not_login";
         }
         else
         {
-            return "1";
+            $time = $this->eligibility_check();
+            if($time>0)
+                return $time;
+            else
+                return "37";
         }
         
     }
@@ -247,6 +263,8 @@ class bsd24_mainController extends Controller
         DB::table('exchange_all_record_privates')->insert($make_array);
         $make_array2 = array('bsd24_exchange_id'=>session('exchange_info.bsd24_exchange_id'), 'status'=>"verifying your transaction");
         DB::table('exchange_trackers')->insert($make_array2);
+        $make_array3 = array('user_email'=>session('user_info.email'), 'last_exchange_time'=>NOW());
+        DB::table('user_last_exchange_times')->insert($make_array3);
         return redirect('/thank_you');
     }
 
@@ -264,7 +282,8 @@ class bsd24_mainController extends Controller
     }
     public function only_test()
     {
-        $single_value = DB::table('exchange_all_record_privates')->orderBy('id','DESC')->value('created_at');
+        //$single_value = DB::table('exchange_all_record_privates')->orderBy('id','DESC')->value('created_at');
+        $single_value=$this->eligibility_check();
         return $single_value;
     }
     
@@ -277,5 +296,15 @@ class bsd24_mainController extends Controller
         return view('bsd24_other_user_profile')->with('user_data', $user_data);
         
     }
+
+    public function bsd24_exchange_tracking($bsd24_exchange_id)
+    {
+        $status = DB::table('exchange_trackers')->where('bsd24_exchange_id',$bsd24_exchange_id)->orderBy('id','DESC')->value('status');
+        return $status;
+
+    }
+
+
+
 
 }

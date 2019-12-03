@@ -81,7 +81,7 @@
 								<input required  class="form-control" style="width:60%;padding:10px;" name="user_operator_no">
 							</div>
 							<br>
-							<h5 style="color:red;" id="user_login_req"></h5>
+							<h6 style="color:red;font-size:15px;font-style:italic;padding-bottom:4px;" id="user_login_req"></h6>
 							<button id="exchange_command" class="btn btn-primary w-100" type="button">Exchange</button>
 							<input type="submit" style="display:none;" id="exchange_command2" class="btn-n btn-lg btn-primary" value="Go for Exchange">
 						</div>
@@ -383,19 +383,25 @@
 					},
 					success: function(response){
 						console.log(response);
-						if(response!=1)
+						if(response=="not_login")
 						{
-							document.getElementById('user_login_req').innerHTML = response;
+							document.getElementById('user_login_req').innerHTML = "Please Login First...";
 						}
-						else
-						{
-							var card_or_phone = document.getElementById('moneyReceive').value;
+						else if(response==37)
+							{
+								var card_or_phone = document.getElementById('moneyReceive').value;
 
-							document.getElementById('credential_message').innerHTML = "Enter Your " + card_or_phone+ " Number";
+							document.getElementById('credential_message').innerHTML = "Enter Your " + card_or_phone+ " Account mail/card/number";
 							document.getElementById('operator_credential').style.display="block";
 							document.getElementById('exchange_command').style.display = 'none';
 							document.getElementById('exchange_command2').style.display = 'block';
 
+								
+							}
+						else
+						{
+							
+							document.getElementById('user_login_req').innerHTML ="you have to wait "+ response +" minutes more for next exchange.";
 
 						}
 					}

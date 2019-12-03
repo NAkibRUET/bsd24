@@ -66,7 +66,7 @@
                           <td>{{$record->to_amount}}</td>
                           <td>{{$record->transaction}}</td>
                           <td>{{$record->exchange_tracking_id}}</td>
-                          <td><a href="/">GO & See</a></td>
+                        <td><a href="{{URL::to('user_info/'.$record->user_email)}}">GO & See</a></td>
                           <td>
                             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
                             <div class="dropdown-menu">

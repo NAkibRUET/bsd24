@@ -61,9 +61,11 @@
 	        <marquee behavior="scroll" direction="left" 
 	          onmouseover="this.stop();" 
 	          onmouseout="this.start();" style="margin-bottom: -4px; color:#fff;">
-	          @foreach ($headline as $data)
-	            <a><i class="fa fa-angle-double-right" ></i> {{$data->headline_text}}</a>
-	          @endforeach
+	          @if(!empty(session('headline_text')))
+				<a><i class="fa fa-angle-double-right" ></i>  {{session('headline_text')}}</a>
+				@else
+			<a><i class="fa fa-angle-double-right" ></i> Welcome To buyselldollar24.com </a>
+	          @endif
 	        </marquee> 
 	      </div>
 	    
