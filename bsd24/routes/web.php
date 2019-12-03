@@ -35,6 +35,7 @@ route::post('/bsd24_exchange_final_stage','bsd24_mainController@bsd24_exchange_f
 route::get('/thank_you','bsd24_mainController@thank_you');
 route::get('/only_test','bsd24_mainController@only_test');
 Route::get('/user_info/{email}', "bsd24_mainController@other_user_profile");
+Route::get('/exchange_tracking/{bsd24_exchange_id}','bsd24_mainController@bsd24_exchange_tracking');
 
 
 route::get('/admin/login', 'adminController@admin_login');

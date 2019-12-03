@@ -28,7 +28,7 @@
 			<h6 style="text-align: left;">Amount Receive <span style="float: right">{{Session::get('exchange_info.user_receive_value')}}</span></h6>
 			</div>
 			<div style="border-bottom: 1px solid #e5e5e5; background: #fff; padding: 10px">
-			<h6 style="text-align: left;">Your Neteller Account <span style="float: right">{{Session::get('exchange_info.user_operator_no')}}</span></h6>
+			<h6 style="text-align: left;">Your reciving account <span style="float: right">{{Session::get('exchange_info.user_operator_no')}}</span></h6>
 			</div>
 			
 			<div style="border-bottom: 1px solid #e5e5e5; background: #9FCB9F; padding: 10px">
