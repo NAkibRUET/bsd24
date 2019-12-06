@@ -316,4 +316,19 @@ class adminController extends Controller
         }
     }
 
+    /* Transaction Fee */
+
+    public function transaction_fee(){
+        return view('bsd24_admin/html/transaction_fee');
+    }
+
+    public function transaction_fee_post(request $data){
+        $minimum_amount = $data->minimum_amount;
+        $transaction_fee = $data->transaction_fee;
+        $make_array = array('minimum_ammount'=>$minimum_amount, 'transaction_fee'=>$transaction_fee);
+        DB::table('trans_fees')->insert($make_array);
+
+        return view('bsd24_admin/html/transaction_fee')->with('msg_status', 'Successfully added one');
+    }
+
 }

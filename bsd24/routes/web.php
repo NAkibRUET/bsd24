@@ -83,3 +83,5 @@ route::get('/headline_delete/{id}', 'adminController@headline_delete_show')->mid
 route::get('/headline/delete/{id}', 'adminController@headline_delete')->middleware('admin_permission');
 
 
+route::get('/transaction_fee', 'adminController@transaction_fee')->middleware('admin_permission');
+route::post('/transaction_fee', 'adminController@transaction_fee_post')->middleware('admin_permission');

@@ -134,12 +134,14 @@
                     </div>
                     <!-- Column -->
                     <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-warning text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-alert"></i></h1>
-                                <h6 class="text-white">Errors</h6>
+                        <a href="{{URL::to('/transaction_fee')}}" style="">
+                            <div class="card card-hover">
+                                <div class="box bg-warning text-center">
+                                    <h1 class="font-light text-white"><i class="fas fa-paper-plane"></i></h1>
+                                    <h6 class="text-white">Trnsaction Fee Control</h6>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <!-- Column -->
                 </div>

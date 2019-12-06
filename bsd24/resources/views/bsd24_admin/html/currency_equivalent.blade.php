@@ -48,7 +48,7 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="row">
-                                                <div class="col-md-6" style=" border-right:1px solid red;">
+                                                <div class="col-md-6" style=" border-right:1px solid #e5e5e5;">
                                                    <h3 style="font-weight:bold;text-align:center;">Convert From</h3>
                                                    <hr>
 
