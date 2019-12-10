@@ -27,7 +27,9 @@ class bsd24_mainController extends Controller
         $review = DB::table('bsd_reviews')->where('status','1')->orderBy('id', 'DESC')->take(10)->get();
         $headline = DB::table('headline_tables')->orderBy('id', 'ASC')->first();
         session(['headline_text'=>$headline->headline_text]);
-        return view('main_home_page')->with('review',$review);
+        $all_reserve = DB::table('our_reserve_amounts')->get();
+        
+        return view('main_home_page')->with(['review'=>$review, 'all_reserve'=>$all_reserve]);
     }
     function login()
     {
@@ -48,8 +50,34 @@ class bsd24_mainController extends Controller
     }
     function profile()
     {
-        return view('bsd24_profile');
+        $transaction_history = DB::table('exchange_all_record_privates')->where('user_email',session('user_info.email'))->orderBy('id', 'desc')->take(10)->get();
+        return view('bsd24_profile')->with('transaction_history',$transaction_history);
     }
+
+    public function track_a_transaction($tracking_id)
+    {
+        $one_transaction = DB::table('exchange_all_record_privates')->where('exchange_tracking_id', $tracking_id)->first();
+        return view('details_transaction')->with('one_transaction',$one_transaction);
+
+    }
+
+    public function logout_user()
+    {
+        session()->flush(); 
+        return $this->bsd24_home_page();
+    }
+    public function track_transaction(request $data)
+    {
+        $track_id = $data->tracking_id;
+        $result = $this->bsd24_exchange_tracking($track_id);
+        return $result;
+
+    }
+
+
+
+
+
     function exchange_operation_view()
     {
         if(session('exchange_info.user_receive_value','')=='')
@@ -300,7 +328,10 @@ class bsd24_mainController extends Controller
     public function bsd24_exchange_tracking($bsd24_exchange_id)
     {
         $status = DB::table('exchange_trackers')->where('bsd24_exchange_id',$bsd24_exchange_id)->orderBy('id','DESC')->value('status');
-        return $status;
+        if($status!="")
+            return $status;
+        else
+            return  "not_found";
 
     }
 

@@ -93,6 +93,7 @@
 				<div class="box2nd95">
 					<h5 class="box2ndHeader">Latest Buy Sell (Processing)</h5>
 					<div class="tableDiv">
+
 						<table class="table table-striped table-hover">
 						  <thead>
 						    <tr>
@@ -126,6 +127,8 @@
 						    </tr>
 						  </tbody>
 						</table>
+
+						
 					</div>
 				</div>
 				<div class="box2nd95">
@@ -183,119 +186,26 @@
 			</div>
 			<div class="col-lg-3">
   				<div class="box2nd100">
-					<h5 class="box2ndHeader">Our Reserve</h5>	
+					<h5 class="box2ndHeader">Our Reserve</h5>
+					
+					@foreach ($all_reserve as $reserve)
+
 					<div class="reserveDiv">
-						<img src="{{ URL::asset ('bsd24_assets/neteller.png') }}" width="50px"
+						<img src="{{ URL::asset ('bsd24_assets/reserved_file/'.$reserve->reserve_image)}}" width="50px"
 								class="rounded-circle img-thumbnail pull-left">
 						<span class="pull-left reserveSpan">
-							<span class="mainText">Neteller USD</span><br/>
-							<span class="text text-muted">2357.42 USD </span>
+						<span class="mainText">{{$reserve->reserve_name}}</span><br/>
+							<span class="text text-muted">{{$reserve->reserve_amount}} {{$reserve->reserve_currency}} </span>
 						</span>
 					</div> 
-					<div class="reserveDiv">
-						<img src="{{ URL::asset ('bsd24_assets/paypal.jpg') }}" width="50px"
-								class="rounded-circle img-thumbnail pull-left">
-						<span class="pull-left reserveSpan">
-							<span class="mainText">Paypal USD</span><br/>
-							<span class="text text-muted">2357.42 USD </span>
-						</span>
-					</div> 
-					<div class="reserveDiv">
-						<img src="{{ URL::asset ('bsd24_assets/payoneer.png') }}" width="50px"
-								class="rounded-circle img-thumbnail pull-left">
-						<span class="pull-left reserveSpan">
-							<span class="mainText">Payoneer USD</span><br/>
-							<span class="text text-muted">2357.42 USD </span>
-						</span>
-					</div> 
-					<div class="reserveDiv">
-						<img src="{{ URL::asset ('bsd24_assets/pm.png') }}" width="50px"
-								class="rounded-circle img-thumbnail pull-left">
-						<span class="pull-left reserveSpan">
-							<span class="mainText">PM USD</span><br/>
-							<span class="text text-muted">2357.42 USD </span>
-						</span>
-					</div> 
-					<div class="reserveDiv">
-						<img src="{{ URL::asset ('bsd24_assets/skrill.png') }}" width="50px"
-								class="rounded-circle img-thumbnail pull-left">
-						<span class="pull-left reserveSpan">
-							<span class="mainText">Skrill USD</span><br/>
-							<span class="text text-muted">2357.42 USD </span>
-						</span>
-					</div> 
-					<div class="reserveDiv">
-						<img src="{{ URL::asset ('bsd24_assets/bkash.png') }}" width="50px"
-								class="rounded-circle img-thumbnail pull-left">
-						<span class="pull-left reserveSpan">
-							<span class="mainText">BKash Personal BDT</span><br/>
-							<span class="text text-muted">2357.42 BDT </span>
-						</span>
-					</div> 
-					<div class="reserveDiv">
-						<img src="{{ URL::asset ('bsd24_assets/bkash_agent.png') }}" width="50px"
-								class="rounded-circle img-thumbnail pull-left">
-						<span class="pull-left reserveSpan">
-							<span class="mainText">BKash Agent BDT</span><br/>
-							<span class="text text-muted">2357.42 BDT </span>
-						</span>
-					</div> 
-					<div class="reserveDiv">
-						<img src="{{ URL::asset ('bsd24_assets/rocket.png') }}" width="50px"
-								class="rounded-circle img-thumbnail pull-left">
-						<span class="pull-left reserveSpan">
-							<span class="mainText">Rocket Personal BDT</span><br/>
-							<span class="text text-muted">2357.42 BDT </span>
-						</span>
-					</div> 
-					<div class="reserveDiv">
-						<img src="{{ URL::asset ('bsd24_assets/rocket_agent.jpg') }}" width="50px"
-								class="rounded-circle img-thumbnail pull-left">
-						<span class="pull-left reserveSpan">
-							<span class="mainText">Rocket Agent BDT</span><br/>
-							<span class="text text-muted">2357.42 BDT </span>
-						</span>
-					</div> 
-					<div class="reserveDiv">
-						<img src="{{ URL::asset ('bsd24_assets/nagad.jpg') }}" width="50px"
-								class="rounded-circle img-thumbnail pull-left">
-						<span class="pull-left reserveSpan">
-							<span class="mainText">Nagad BDT</span><br/>
-							<span class="text text-muted">2357.42 BDT </span>
-						</span>
-					</div> 
-					<div class="reserveDiv">
-						<img src="{{ URL::asset ('bsd24_assets/dbbl.png') }}" width="50px"
-								class="rounded-circle img-thumbnail pull-left">
-						<span class="pull-left reserveSpan">
-							<span class="mainText">DBBL BDT</span><br/>
-							<span class="text text-muted">2357.42 BDT </span>
-						</span>
-					</div> 
-					<div class="reserveDiv">
-						<img src="{{ URL::asset ('bsd24_assets/city-bank.png') }}" width="50px"
-								class="rounded-circle img-thumbnail pull-left">
-						<span class="pull-left reserveSpan">
-							<span class="mainText">City Bank BDT</span><br/>
-							<span class="text text-muted">2357.42 BDT </span>
-						</span>
-					</div> 
-					<div class="reserveDiv">
-						<img src="{{ URL::asset ('bsd24_assets/webmoney.png') }}" width="50px"
-								class="rounded-circle img-thumbnail pull-left">
-						<span class="pull-left reserveSpan">
-							<span class="mainText">Webmoney USD</span><br/>
-							<span class="text text-muted">2357.42 USD </span>
-						</span>
-					</div> 
-					<div class="reserveDiv">
-						<img src="{{ URL::asset ('bsd24_assets/coinbase.png') }}" width="50px"
-								class="rounded-circle img-thumbnail pull-left">
-						<span class="pull-left reserveSpan">
-							<span class="mainText">Coinbase USD</span><br/>
-							<span class="text text-muted">2357.42 USD </span>
-						</span>
-					</div> 
+
+					@endforeach
+					
+					
+					
+					
+					
+					
 				</div>
 				<div class="box2nd100">
 					<h5 class="box2ndHeader">Today Exchange Rate</h5>
@@ -312,39 +222,25 @@
 					      <td><img src="{{ URL::asset ('bsd24_assets/skrill.png') }}" width="25" class="rounded-circle"> Skrill</td>
 					      <td>80</td>
 					      <td>100</td>
-					    </tr>
+						</tr>
+						<tr>
 					    <td><img src="{{ URL::asset ('bsd24_assets/neteller.png') }}" width="25" class="rounded-circle"> Neteller</td>
 					      <td>80</td>
 					      <td>100</td>
 					    </tr>
-					    <td><img src="{{ URL::asset ('bsd24_assets/paypal.jpg') }}" width="25" class="rounded-circle"> Paypal</td>
-					      <td>80</td>
-					      <td>100</td>
-					    </tr>
-					    <td><img src="{{ URL::asset ('bsd24_assets/payoneer.png') }}" width="25" class="rounded-circle"> Payoneer</td>
-					      <td>80</td>
-					      <td>100</td>
-					    </tr>
-					    <td><img src="{{ URL::asset ('bsd24_assets/webmoney.png') }}" width="25" class="rounded-circle"> WebMoney</td>
-					      <td>80</td>
-					      <td>100</td>
-					    </tr>
-					    <td><img src="{{ URL::asset ('bsd24_assets/pm.png') }}" width="25" class="rounded-circle"> PM</td>
-					      <td>80</td>
-					      <td>100</td>
-					    </tr>
-					    <td><img src="{{ URL::asset ('bsd24_assets/coinbase.png') }}" width="25" class="rounded-circle"> Coinbase</td>
-					      <td>80</td>
-					      <td>100</td>
-					    </tr>
+					    
 					  </tbody>
 					</table>
 				</div>
 				<div class="box2nd100">
 					<h5 class="box2ndHeader">Track Exchange</h5>
 					<div style="padding: 10px;">
-						<input type="text" name="" class="form-control">
-						<button type="button" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Track</button>
+						<input type="text" minlength="16" maxlength="17" id="exchange_track" name="" class="form-control">
+						<input type="hidden" id="track_token" name="_token" value="{{csrf_token()}}">
+						<button type="button" id="track_search" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Track</button>
+						<br>
+						<h3 id= "status_message_display" style="margin-top:20px;color:green;"></h3>
+						<h3 id= "Not_found_track" style="margin-top:20px;color:red;"></h3>
 					</div>
 				</div>
 			</div>
@@ -414,6 +310,35 @@
 
 
 
+	$(document).ready(function(){
+		$("#track_search").click(function(event){
+			event.preventDefault();
+			exchange_track = $('#exchange_track').val();
+			//console.log(exchange_track);
+			$.ajax({
+				method: "GET",
+				url: '/track_transaction',
+				data :{
+                    tracking_id : exchange_track,
+                    _token: $('#track_token').val()
+
+                },
+				success: function(response)
+				{
+					//console.log(response);
+					if(response=="not_found")
+					{
+						$("#Not_found_track").text("Not Found..");
+					}
+					else
+					{
+						$("#status_message_display").text(response);
+					}
+				}
+			})
+		})
+	})
+
 
 
 
@@ -428,6 +353,10 @@
 			//console.log($result);
 			document.getElementById('user_receiveVal').value= $result;
 		}
+
+
+
+
 
 		function server_communication(moneySend, moneyReceive)
 		{
