@@ -27,7 +27,9 @@
 							@endif
 						</div>
 					</div>
-					<div class="reviewform">
+					<button onclick="review_toggle()" class="btn btn-sm btn-success btn-block">make a review for this service</button>
+
+					<div class="reviewform" id="review_box">
 						<h5 style="color:#1B6DC1">Review this website</h5>
 						
 						<form id="reviewform">
@@ -39,57 +41,49 @@
 						</form>
 					</div>
 
+					<!--present transaction-->
+
+					<div class="reviewform">
+						<h6 style="color:#1B6DC1">~ Abort Options ~</h6>
+						<hr>
+					<button class="btn btn-danger"><a href="{{URL::to('/logout')}}" style="color:white;" onclick="return confirm('Are you sure to logout?');">Log Out</a></button>
+						
+						
+						
+					</div>
+
+
 				</div>
 				<div class="col-md-8">
 					<div class="box2nd100">
 						<h5 class="box2ndHeader">Transaction History</h5>
 						<div class="tableDiv">
-						<table class="table table-striped table-hover">
+						<table class="table table-bordered table-hover">
 						  <thead>
 						    <tr>
-						      <th scope="col" class="hiddenElem2">#</th>
-						      <th scope="col">Send</th>
-						      <th scope="col">Receive</th>
-						      <th scope="col">Amount</th>
-						      <th scope="col">Date</th>
+						     
+						      <th scope="col">Sent</th>
+						      <th scope="col">Received</th>
+						      <th scope="col">Tracking id</th>
+						      
+						      <th scope="col">Date/time</th>
+						      <th scope="col">Status</th>
 						    </tr>
 						  </thead>
 						  <tbody>
+						@foreach($transaction_history as $transaction)
 						    <tr>
-						      <th scope="row" class="hiddenElem2">1</th>
-						      <td><img src="{{ URL::asset ('bsd24_assets/bkash_agent.png') }}" width="25" class="rounded-circle"> <span class="hiddenElem">BKash Agent</span></td>
-						      <td><img src="{{ URL::asset ('bsd24_assets/nagad.jpg') }}" width="25" class="rounded-circle"> <span class="hiddenElem">Nagad</span></td>
-						      <td>5000 BDT</td>
-						      <td><span class="badge badge-primary">09/11/2019</span></td>
+							<td>{{$transaction->sending}}</td>
+							<td>{{$transaction->receiving}}</td>
+							<td><a href="all_transaction_info/{{$transaction->exchange_tracking_id}}">{{$transaction->exchange_tracking_id}}</a></td>
+								
+								<td>{{$transaction->created_at}}</td>
+								<td>{{$transaction->status}}</td>
+									
+									
 						    </tr>
-						    <tr>
-						      <th scope="row" class="hiddenElem2">2</th>
-						      <td><img src="{{ URL::asset ('bsd24_assets/bkash_agent.png') }}" width="25" class="rounded-circle"> <span class="hiddenElem">BKash Agent</span></td>
-						      <td><img src="{{ URL::asset ('bsd24_assets/nagad.jpg') }}" width="25" class="rounded-circle"> <span class="hiddenElem">Nagad</span></td>
-						      <td>5000 BDT</td>
-						      <td><span class="badge badge-primary">09/11/2019</span></td>
-						    </tr>
-						    <tr>
-						      <th scope="row" class="hiddenElem2">3</th>
-						      <td><img src="{{ URL::asset ('bsd24_assets/bkash_agent.png') }}" width="25" class="rounded-circle"> <span class="hiddenElem">BKash Agent</span></td>
-						      <td><img src="{{ URL::asset ('bsd24_assets/nagad.jpg') }}" width="25" class="rounded-circle"> <span class="hiddenElem">Nagad</span></td>
-						      <td>5000 BDT</td>
-						      <td><span class="badge badge-primary">09/11/2019</span></td>
-						    </tr>
-						    <tr>
-						      <th scope="row" class="hiddenElem2">4</th>
-						      <td><img src="{{ URL::asset ('bsd24_assets/bkash_agent.png') }}" width="25" class="rounded-circle"> <span class="hiddenElem">BKash Agent</span></td>
-						      <td><img src="{{ URL::asset ('bsd24_assets/nagad.jpg') }}" width="25" class="rounded-circle"> <span class="hiddenElem">Nagad</span></td>
-						      <td>5000 BDT</td>
-						      <td><span class="badge badge-primary">09/11/2019</span></td>
-						    </tr>
-						    <tr>
-						      <th scope="row" class="hiddenElem2">5</th>
-						      <td><img src="{{ URL::asset ('bsd24_assets/bkash_agent.png') }}" width="25" class="rounded-circle"> <span class="hiddenElem">BKash Agent</span></td>
-						      <td><img src="{{ URL::asset ('bsd24_assets/nagad.jpg') }}" width="25" class="rounded-circle"> <span class="hiddenElem">Nagad</span></td>
-						      <td>5000 BDT</td>
-						      <td><span class="badge badge-primary">09/11/2019</span></td>
-						    </tr>
+						 @endforeach
+						   
 						  </tbody>
 						</table>
 					</div>
@@ -117,6 +111,24 @@
 	</div>
 	<!--Please, place all your div/box/anything inside the above SECTION-->
 <script type="text/javascript">
+
+document.getElementById("review_box").style.display="none";
+
+function review_toggle()
+{
+	var x = document.getElementById("review_box");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+
+
+
+
+
 function review_size(data){
 	let str = data.value;
 	let size = str.length;
