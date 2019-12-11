@@ -97,7 +97,7 @@
 						<table class="table table-striped table-hover">
 						  <thead>
 						    <tr>
-						      <th scope="col" class="hiddenElem2">#</th>
+						      <th scope="col" class="hiddenElem2">Sl</th>
 						      <th scope="col">Send</th>
 						      <th scope="col">Receive</th>
 						      <th scope="col">Amount</th>
@@ -106,25 +106,11 @@
 						      <th scope="col"><span class="hiddenElem">Status</span></th>
 						    </tr>
 						  </thead>
-						  <tbody>
-						    <tr>
-						      <th scope="row" class="hiddenElem2">1</th>
-						      <td><img src="{{ URL::asset ('bsd24_assets/bkash_agent.png') }}" width="25" class="rounded-circle"> <span class="hiddenElem">BKash Agent</span></td>
-						      <td><img src="{{ URL::asset ('bsd24_assets/nagad.jpg') }}" width="25" class="rounded-circle"> <span class="hiddenElem">Nagad</span></td>
-						      <td>5000 BDT</td>
-						      <td>Mark Otto</td>
-						      <td><span class="badge badge-primary">09/11/2019</span></td>
-						      <td><span class="badge badge-warning hiddenElem"> Processing</span></td>
-						    </tr>
-						    <tr>
-						      <th scope="row" class="hiddenElem2">2</th>
-						      <td><img src="{{ URL::asset ('bsd24_assets/skrill.png') }}" width="25" class="rounded-circle"> <span class="hiddenElem">Skrill</span></td>
-						      <td><img src="{{ URL::asset ('bsd24_assets/neteller.png') }}" width="25" class="rounded-circle"> <span class="hiddenElem">Neteller</span></td>
-						      <td>5000 BDT</td>
-						      <td>John Doe</td>
-						      <td><span class="badge badge-primary">09/11/2019</span></td>
-						      <td><span class="badge badge-warning hiddenElem"> Processing</span></td>
-						    </tr>
+						  <tbody id="all_processing_data">
+						    
+						    
+							
+
 						  </tbody>
 						</table>
 
@@ -137,7 +123,7 @@
 						<table class="table table-striped table-hover">
 						  <thead>
 						    <tr>
-						      <th scope="col" class="hiddenElem2">#</th>
+						      <th scope="col" class="hiddenElem2">Sl</th>
 						      <th scope="col">Send</th>
 						      <th scope="col">Receive</th>
 						      <th scope="col">Amount</th>
@@ -146,25 +132,9 @@
 						      <th scope="col"><span class="hiddenElem">Status</span></th>
 						    </tr>
 						  </thead>
-						  <tbody>
-						    <tr>
-						      <th scope="row" class="hiddenElem2">1</th>
-						      <td><img src="{{ URL::asset ('bsd24_assets/bkash_agent.png') }}" width="25" class="rounded-circle"> <span class="hiddenElem">BKash Agent</span></td>
-						      <td><img src="{{ URL::asset ('bsd24_assets/city-bank.png') }}" width="25" class="rounded-circle"> <span class="hiddenElem">City Bank</span></td>
-						      <td>5000 BDT</td>
-						      <td>Mark Otto</td>
-						      <td><span class="badge badge-primary">09/11/2019</span></td>
-						      <td><span class="badge badge-success hiddenElem"><i class="fa fa-check"></i> Completed</span></td>
-						    </tr>
-						    <tr>
-						      <th scope="row" class="hiddenElem2">2</th>
-						      <td><img src="{{ URL::asset ('bsd24_assets/webmoney.png') }}" width="25" class="rounded-circle"> <span class="hiddenElem">WebMoney</span></td>
-						      <td><img src="{{ URL::asset ('bsd24_assets/neteller.png') }}" width="25" class="rounded-circle"> <span class="hiddenElem">Neteller</span></td>
-						      <td>500 USD</td>
-						      <td>Jon Doe</td>
-						      <td><span class="badge badge-primary">09/11/2019</span></td>
-						      <td><span class="badge badge-success hiddenElem"><i class="fa fa-check"></i> Completed</span></td>
-						    </tr>
+						  <tbody id ="all_completed_data">
+						    
+						   
 						  </tbody>
 						</table>
 					</div>
@@ -520,6 +490,74 @@
 		// else if(sendType = .... && receiveType = ....){
 
 	</script>
+
+
+
+
+
+<script>
+
+
+
+
+
+function read_processing()
+    {
+        $.ajax({
+            type: 'GET',
+            url: "{{URL::to('read_processing/present_precessing')}}",
+            success: function(response)
+            {
+                console.log(response);
+                document.getElementById("all_processing_data").innerHTML=response;
+            }
+        })
+    }
+
+
+	function read_completed()
+    {
+        $.ajax({
+            type: 'GET',
+            url: "{{URL::to('read_completed/present_completed')}}",
+            success: function(response)
+            {
+                console.log(response);
+                document.getElementById("all_completed_data").innerHTML=response;
+            }
+        })
+    }
+
+
+
+
+
+
+setInterval(() => {
+	read_processing();
+        
+     }, 3000);
+
+
+setInterval(() => {
+	read_completed();
+        
+     }, 3000);
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
 	
 
 @endsection

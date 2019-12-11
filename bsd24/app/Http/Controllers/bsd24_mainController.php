@@ -337,5 +337,64 @@ class bsd24_mainController extends Controller
 
 
 
+    function get_full_name($email)
+    {
+        $user_full_name = DB::table('bsd_user_informations')->where('user_email',$email)->value('full_name');
+        return $user_full_name;
+
+    }
+
+
+
+
+
+    public function read_processing()
+    {
+        $all_processing = DB::table('exchange_all_record_privates')->where('status','processing')->orderBy('id', 'DESC')->take(5)->get();
+        $var = "";
+        $sl=1;
+        foreach($all_processing as $processing)
+        {
+            $img1 = '/bsd24_assets/processing_complete/'.$processing->sending.'.png'; 
+            $img2 = '/bsd24_assets/processing_complete/'.$processing->receiving.'.png'; 
+            $var =$var.'<tr>
+            <th scope="row" class="hiddenElem2">'.$sl++.'</th>
+            <td><img src="" width="25" class="rounded-circle"> <span class="hiddenElem">'.$processing->sending.'</span></td>
+            <td><img src="" width="25" class="rounded-circle"> <span class="hiddenElem">'.$processing->receiving.'</span></td>
+            <td>'.$processing->to_amount.'</td>
+            <td>'.$this->get_full_name($processing->user_email).'</td>
+            <td><span class="badge badge-primary">'.date("d-m-Y", strtotime($processing->updated_at)).'</span></td>
+            <td><span class="badge badge-warning hiddenElem"> '.$processing->status.'</span></td>
+          </tr>'; 
+        }
+
+
+        return $var;
+    }
+
+    
+
+    public function read_completed()
+    {
+        $all_completed = DB::table('exchange_all_record_privates')->where('status','completed')->orderBy('id', 'DESC')->take(5)->get();
+        $var = "";
+        $sl=1;
+        foreach($all_completed as $completed)
+        {
+            $var =$var.'<tr>
+            <th scope="row" class="hiddenElem2">'.$sl++.'</th>
+            <td><img src="" width="25" class="rounded-circle"> <span class="hiddenElem">'.$completed->sending.'</span></td>
+            <td><img src="" width="25" class="rounded-circle"> <span class="hiddenElem">'.$completed->receiving.'</span></td>
+            <td>'.$completed->to_amount.'</td>
+            <td>'.$this->get_full_name($completed->user_email).'</td>
+            <td><span class="badge badge-primary">'.date("d-m-Y", strtotime($completed->updated_at)).'</span></td>
+            <td><span class="badge badge-warning hiddenElem"> '.$completed->status.'</span></td>
+          </tr>'; 
+        }
+        return $var;
+    }
+
+
+
 
 }
