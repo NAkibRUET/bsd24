@@ -12,6 +12,39 @@
 	<!--SECTION STARTS HERE -->
 	<!--Please, place all your div/box/anything inside the above SECTION-->
 	<div class="section container" style="">
+
+		<!-- Image Slider Hidden -->
+		<!--
+			<div style="margin-left: 1.8%">
+				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+					</ol>
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+						<img src="{{ URL::asset ('bsd24_assets/slider1.jpg') }}" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item">
+						<img src="{{ URL::asset ('bsd24_assets/slider2.jpg') }}" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item">
+						<img src="{{ URL::asset ('bsd24_assets/slider3.jpg') }}" class="d-block w-100" alt="...">
+						</div>
+					</div>
+					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>	
+			</div>
+			
+		-->
   		<div class="row">
   			<div class="col-lg-9">
 					<form method="post" action="{{URL::to('/exchange_operation_view')}}">
