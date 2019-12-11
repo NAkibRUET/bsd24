@@ -39,6 +39,8 @@ Route::get('/exchange_tracking/{bsd24_exchange_id}','bsd24_mainController@bsd24_
 Route::get('/all_transaction_info/{tracking_id}','bsd24_mainController@track_a_transaction');
 Route::get('/logout', 'bsd24_mainController@logout_user');
 Route::get('/track_transaction', 'bsd24_mainController@track_transaction');
+Route::get('read_processing/present_precessing','bsd24_mainController@read_processing');
+Route::get('read_completed/present_completed','bsd24_mainController@read_completed');
 
 
 
